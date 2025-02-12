@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
+import unitsJSON from "./Units.json";
 
 const UnitDropDown = ({handleValue , handleType , selectedValue }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -10,7 +11,7 @@ const UnitDropDown = ({handleValue , handleType , selectedValue }) => {
 
   //Fetching Units data
   const fetchUnits = async () => {
-    const response = await fetch("/Units.json");
+    const response = await fetch(unitsJSON);
     const data = await response.json();
     setUnits(data.units);
   };

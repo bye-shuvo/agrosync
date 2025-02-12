@@ -6,12 +6,24 @@ import Footer from "./Footer.jsx";
 import Chatbot from "./Chatbot.jsx";
 import Newsletter from "./Newsletter.jsx";
 import grassline from "../images/grass-line.png";
+import magnifyingGlass from "../images/magnifying-glass.png";
+import chatbubble from "../images/chat-bubble.png";
+import seeds from "../images/seeds.png";
+import arrowRight from "../images/arrow-right.svg";
+import cropArrow from "../images/crop-arrow.png";
+import agriDrone from "../images/agri-drone.png";
+import borderBelow from "../images/border-below.png"
+import marketTrends from "../images/Market_trends.png";
+import mlModelImprovement from "../images/ml.jpg";
+import login from "../images/login.png";
+import weatherForecasting from "../images/weather-forecasting.png";
 
+src/images/crop-arrow.png
 const Home = () => {
   const [isVisible , setIsVisible] = useState(false);
   const [lastScrollY , setLastScrollY] = useState(0);
   const [isClicked , setIsClicked] = useState(false);
-
+src/images/arrow-right.svg
   const handleScroll = () =>{
     if(lastScrollY > 740){
       setIsVisible(true);
@@ -104,7 +116,7 @@ const Home = () => {
           className="group relative md:mt-20 h-[50vh] md:h-[80%] w-[90%] md:w-[100%] rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
         >
           <img
-            src="/src/images/magnify.jpeg"
+            src={magnifyingGlass}
             alt="magnifying-glass"
             className="h-full w-full object-cover hover:cursor-pointer group-hover:scale-125 transition-all duration-700 ease-in-out"
           />
@@ -122,7 +134,7 @@ const Home = () => {
               </span>
               <div className="pt-2">
                 <img
-                  src="/src/images/arrow-right.svg"
+                  src={arrowRight}
                   alt="arrow"
                   className="inline-block h-[1.4rem] w-auto"
                 />{" "}
@@ -130,7 +142,7 @@ const Home = () => {
               </div>
               <div className="pt-2">
                 <img
-                  src="/src/images/arrow-right.svg"
+                  src={arrowRight}
                   alt="arrow"
                   className="inline-block h-[1.4rem] w-auto"
                 />{" "}
@@ -138,7 +150,7 @@ const Home = () => {
               </div>
               <div className="pt-2">
                 <img
-                  src="/src/images/arrow-right.svg"
+                  src={arrowRight}
                   alt="arrow"
                   className="inline-block h-[1.4rem] w-auto"
                 />{" "}
@@ -146,7 +158,7 @@ const Home = () => {
               </div>
               <div className="pt-2">
                 <img
-                  src="/src/images/arrow-right.svg"
+                  src={arrowRight}
                   alt="arrow"
                   className="inline-block h-[1.4rem] w-auto"
                 />{" "}
@@ -165,8 +177,8 @@ const Home = () => {
           className="group relative md:mt-20 h-[50vh] md:h-[80%] w-[90%] md:w-[100%] rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
         >
           <img
-            src="/src/images/chat-bubble.png"
-            alt="magnifying-glass"
+            src={chatbubble}
+            alt="Chat-Bubble"
             className="h-full w-full object-cover hover:cursor-pointer group-hover:scale-125 transition-all duration-700 ease-in-out"
           />
           <div className="absolute top-[100%] left-[50%] cursor-pointer transform -translate-x-[50%] -translate-y-[18%] group-hover:top-[50%] group-hover:-translate-y-[50%] h-[95%] w-[95%] bg-[#2e5b3cc8] text-white text-[1.7rem] md:text-[1.8rem] p-6 flex flex-col items-start justify-start rounded-2xl hover:rounded-lg transition-all duration-700 ease-in-out">
@@ -183,7 +195,7 @@ const Home = () => {
               </span>
               <div className="pt-2">
                 <img
-                  src="/src/images/arrow-right.svg"
+                  src={arrowRight}
                   alt="arrow"
                   className="inline-block h-[1.4rem] w-auto"
                 />{" "}
@@ -191,7 +203,7 @@ const Home = () => {
               </div>
               <div className="pt-2">
                 <img
-                  src="/src/images/arrow-right.svg"
+                  src={arrowRight}
                   alt="arrow"
                   className="inline-block h-[1.4rem] w-auto"
                 />{" "}
@@ -199,7 +211,7 @@ const Home = () => {
               </div>
               <div className="pt-2">
                 <img
-                  src="/src/images/arrow-right.svg"
+                  src={arrowRight}
                   alt="arrow"
                   className="inline-block h-[1.4rem] w-auto"
                 />{" "}
@@ -207,7 +219,7 @@ const Home = () => {
               </div>
               <div className="pt-2">
                 <img
-                  src="/src/images/arrow-right.svg"
+                  src={arrowRight}
                   alt="arrow"
                   className="inline-block h-[1.4rem] w-auto"
                 />{" "}
@@ -227,8 +239,8 @@ const Home = () => {
           className="group relative md:mt-20 h-[50vh] md:h-[80%] w-[90%] md:w-[100%] rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
         >
           <img
-            src="/src/images/seeds.png"
-            alt="magnifying-glass"
+            src={seeds}
+            alt="seeds"
             className="h-full w-full object-cover hover:cursor-pointer group-hover:scale-125 transition-all duration-700 ease-in-out"
           />
           <div className="absolute top-[100%] left-[50%] cursor-pointer transform -translate-x-[50%] -translate-y-[18%] group-hover:top-[50%] group-hover:-translate-y-[50%] h-[95%] w-[95%] bg-[#2e5b3cc8] text-white text-[1.7rem] md:text-[1.8rem] p-6 flex flex-col items-start justify-start rounded-2xl hover:rounded-lg transition-all duration-700 ease-in-out">
@@ -245,7 +257,7 @@ const Home = () => {
               </span>
               <div className="pt-2">
                 <img
-                  src="/src/images/arrow-right.svg"
+                  src={arrowRight}
                   alt="arrow"
                   className="inline-block h-[1.4rem] w-auto"
                 />{" "}
@@ -253,7 +265,7 @@ const Home = () => {
               </div>
               <div className="pt-2">
                 <img
-                  src="/src/images/arrow-right.svg"
+                  src={arrowRight}
                   alt="arrow"
                   className="inline-block h-[1.4rem] w-auto"
                 />{" "}
@@ -261,7 +273,7 @@ const Home = () => {
               </div>
               <div className="pt-2">
                 <img
-                  src="/src/images/arrow-right.svg"
+                  src={arrowRight}
                   alt="arrow"
                   className="inline-block h-[1.4rem] w-auto"
                 />{" "}
@@ -269,7 +281,7 @@ const Home = () => {
               </div>
               <div className="pt-2">
                 <img
-                  src="/src/images/arrow-right.svg"
+                  src={arrowRight}
                   alt="arrow"
                   className="inline-block h-[1.4rem] w-auto"
                 />{" "}
@@ -302,7 +314,7 @@ const Home = () => {
           </div>
           <img
             className="h-full w-full object-cover hover:scale-125 md:hover:scale-110 transition-all duration-700 ease-in-out"
-            src="/src/images/drone-in-agri.png"
+            src={agriDrone}
             alt="about-bg"
           />
         </div>
@@ -314,7 +326,7 @@ const Home = () => {
             {" "}
             <img
               className="h-[0.7rem] md:h-[0.8rem] w-auto mr-2"
-              src="/src/images/crop-arrow.png"
+              src={cropArrow}
               alt="crop-arrow"
             />{" "}
             Why Choose Us?
@@ -326,7 +338,7 @@ const Home = () => {
           <div className="md:pb-8 text-[0.7em] md:text-[0.8em] leading-[1rem] md:leading-[1.5rem]">
             <div className="pt-2">
               <img
-                src="/src/images/arrow-right.svg"
+                src={arrowRight}
                 alt="arrow"
                 className="inline-block h-[1.4rem] w-auto pr-2"
               />{" "}
@@ -334,7 +346,7 @@ const Home = () => {
             </div>
             <div className="pt-2">
               <img
-                src="/src/images/arrow-right.svg"
+                src={arrowRight}
                 alt="arrow"
                 className="inline-block h-[1.4rem] w-auto pr-2"
               />{" "}
@@ -342,7 +354,7 @@ const Home = () => {
             </div>
             <div className="pt-2">
               <img
-                src="/src/images/arrow-right.svg"
+                src={arrowRight}
                 alt="arrow"
                 className="inline-block h-[1.4rem] w-auto pr-2"
               />{" "}
@@ -358,7 +370,7 @@ const Home = () => {
             <h3 className="small-header group cursor-pointer text-[#FFD700] font-bold text-[1.2em] mb-2 md:mb-4 relative">
               <img
                 className="absolute opacity-0 group-hover:opacity-100 bottom-[-0.8rem] right-0 transition-all duration-300 ease-in-out"
-                src="/src/images/border-below.png"
+                src={borderBelow}
                 alt="border-below"
               />
               Increased Efficiency
@@ -371,7 +383,7 @@ const Home = () => {
             <h3 className="small-header group cursor-pointer text-[#FFD700] font-bold text-[1.2em] mb-2 md:mb-4 relative">
               <img
                 className="absolute opacity-0 group-hover:opacity-100 bottom-[-0.8rem] right-0 transition-all duration-300 ease-in-out"
-                src="/src/images/border-below.png"
+                src={borderBelow}
                 alt="border-below"
               />
               Reduced Costs
@@ -386,7 +398,7 @@ const Home = () => {
             <h3 className="small-header group cursor-pointer text-[#FFD700] font-bold text-[1.2em] mb-2 md:mb-4 relative">
               <img
                 className="absolute opacity-0 group-hover:opacity-100 bottom-[-0.8rem] right-0 transition-all duration-300 ease-in-out"
-                src="/src/images/border-below.png"
+                src={borderBelow}
                 alt="border-below"
               />
               Improved Yields
@@ -399,7 +411,7 @@ const Home = () => {
             <h3 className="small-header group cursor-pointer text-[#FFD700] font-bold text-[1.2em] mb-2 md:mb-4 relative">
               <img
                 className="absolute opacity-0 group-hover:opacity-100 bottom-[-0.8rem] right-0 transition-all duration-300 ease-in-out"
-                src="/src/images/border-below.png"
+                src={borderBelow}
                 alt="border-below"
               />
               Sustainable Farming
@@ -429,8 +441,8 @@ const Home = () => {
           className="group relative md:h-full md:w-full rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
         >
           <img
-            src="/src/images/precise-farming.png"
-            alt="precision-farming"
+            src={weatherForecasting}
+            alt="weather-forecasting"
             className="h-full w-full object-cover hover:cursor-pointer group-hover:scale-125 transition-all duration-700 ease-in-out"
           />
           <div className="absolute top-[100%] left-[50%] cursor-pointer transform -translate-x-[50%] -translate-y-[35%] group-hover:top-[50%] group-hover:-translate-y-[50%] h-[95%] w-[95%] bg-[#2e5b3cc8] text-white text-[1.7rem] md:text-[1.8rem] p-6 flex flex-col items-start justify-start rounded-2xl hover:rounded-lg transition-all duration-700 ease-in-out">
@@ -446,8 +458,8 @@ const Home = () => {
           className="group relative md:h-full md:w-full rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
         >
           <img
-            src="/src/images/Market_trends.png"
-            alt="advanced-ai-chatbots"
+            src={marketTrends}
+            alt="marketTrends"
             className="h-full w-full object-cover hover:cursor-pointer group-hover:scale-125 transition-all duration-700 ease-in-out"
           />
           <div className="absolute top-[100%] left-[50%] cursor-pointer transform -translate-x-[50%] -translate-y-[35%] group-hover:top-[50%] group-hover:-translate-y-[50%] h-[95%] w-[95%] bg-[#2e5b3cc8] text-white text-[1.7rem] md:text-[1.8rem] p-6 flex flex-col items-start justify-start rounded-2xl hover:rounded-lg transition-all duration-700 ease-in-out">
@@ -463,8 +475,8 @@ const Home = () => {
            className="group relative md:h-full md:w-full rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
         >
           <img
-            src="src/images/ml.jpg"
-            alt="satelite-monitoring"
+            src={mlModelImprovement}
+            alt="Ml-model-improvement"
             className="h-full w-full object-cover hover:cursor-pointer group-hover:scale-125 transition-all duration-700 ease-in-out"
           />
           <div className="absolute top-[100%] left-[50%] cursor-pointer transform -translate-x-[50%] -translate-y-[35%] group-hover:top-[50%] group-hover:-translate-y-[50%] h-[95%] w-[95%] bg-[#2e5b3cc8] text-white text-[1.7rem] md:text-[1.8rem] p-6 flex flex-col items-start justify-start rounded-2xl hover:rounded-lg transition-all duration-700 ease-in-out">
@@ -480,8 +492,8 @@ const Home = () => {
           className="group relative h-[11rem] md:h-full w-full md:w-full rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
         >
           <img
-            src="src/images/login.png"
-            alt="global-expansion"
+            src={login}
+            alt="login"
             className="h-full w-full object-cover hover:cursor-pointer group-hover:scale-125 transition-all duration-700 ease-in-out"
           />
           <div className="absolute top-[100%] left-[50%] cursor-pointer transform -translate-x-[50%] -translate-y-[35%] group-hover:top-[50%] group-hover:-translate-y-[50%] h-[95%] w-[95%] bg-[#2e5b3cc8] text-white text-[1.7rem] md:text-[1.8rem] p-6 flex flex-col items-start justify-start rounded-2xl hover:rounded-lg transition-all duration-700 ease-in-out">
