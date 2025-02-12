@@ -10,7 +10,7 @@ import magnifyingGlass from "../images/magnify.jpeg";
 import chatbubble from "../images/chat-bubble.png";
 import seeds from "../images/seeds.png";
 import arrowRight from "../images/arrow-right.svg";
-// import cropArrow from "../images/crop-arrow.png";
+import cropArrow from "../images/crop-arrow.png";
 import agriDrone from "../images/drone-in-agri.png";
 import borderBelow from "../images/border-below.png"
 import marketTrends from "../images/Market_trends.png";
