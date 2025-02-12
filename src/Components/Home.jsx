@@ -22,7 +22,7 @@ const Home = () => {
   const [isVisible , setIsVisible] = useState(false);
   const [lastScrollY , setLastScrollY] = useState(0);
   const [isClicked , setIsClicked] = useState(false);
-src/images/arrow-right.svg
+
   const handleScroll = () =>{
     if(lastScrollY > 740){
       setIsVisible(true);
@@ -325,7 +325,7 @@ src/images/arrow-right.svg
             {" "}
             <img
               className="h-[0.7rem] md:h-[0.8rem] w-auto mr-2"
-              src={""}
+              src={cropArrow}
               alt="crop-arrow"
             />{" "}
             Why Choose Us?
