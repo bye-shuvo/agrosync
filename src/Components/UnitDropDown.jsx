@@ -10,7 +10,8 @@ const UnitDropDown = ({handleValue , handleType , selectedValue }) => {
 
   //Fetching Units data
   const fetchUnits = async () => {
-    const response = await fetch("https://seed-calculator.vercel.app/api/units");
+    // https://seed-calculator.vercel.app/api/units
+    const response = await fetch("");
     const data = await response.json();
     setUnits(data.units);
   };

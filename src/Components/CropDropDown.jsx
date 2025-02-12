@@ -12,7 +12,8 @@ const CropDropDown = ({ handleValue, handleType, handleCategory , selectedValue 
 
   //Fetching Crops data
   const fetchCrops = async () => {
-    const response = await fetch("https://seed-calculator.vercel.app/api/crops");
+    // https://seed-calculator.vercel.app/api/crops
+    const response = await fetch("");
     const data = await response.json();
     setCrops(data.crops);
   };
