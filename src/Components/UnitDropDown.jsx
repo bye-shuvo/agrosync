@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
-import unitsJSON from "./Units.json";
+import unitsJSON from "Units.json";
 
 const UnitDropDown = ({handleValue , handleType , selectedValue }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);

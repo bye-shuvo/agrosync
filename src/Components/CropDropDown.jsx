@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
-import CropsJSON from "./Crops.json";
+import CropsJSON from "Crops.json";
 
 const CropDropDown = ({ handleValue, handleType, handleCategory , selectedValue }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
