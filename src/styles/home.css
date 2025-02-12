@@ -1,0 +1,39 @@
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Glory:ital,wght@0,100..800;1,100..800&family=Handlee&family=Knewave&family=Nova+Round&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Glory", serif;
+}
+#hero-section , #cta-section , #seedCalulator-header , #detector{
+    border-image: fill 1 linear-gradient(rgba(80, 108, 82, 0.5) , rgba(80, 108, 82, 0.5));
+}
+
+#detector{
+    border-image: fill 1 linear-gradient(rgba(26, 98, 31, 0.5) , rgba(80, 108, 82, 0));
+}
+
+#features-section{
+    border-image: fill 1 linear-gradient(#F8C32C , #f8c22c00);
+}
+
+#headline , #features-title , .headline {
+    font-family: "Averia Libre", serif;
+}
+#target-title{
+  font-family: "Knewave", serif;
+}
+.sub-header{
+  font-family: "Acme", serif;
+}
+.small-header{
+  font-family: "Handlee", serif;
+}
+button , .btn{
+    font-family: "Nova Round", serif;
+}
+
+#about-subtitle{
+    font-family: "Knewave", serif;
+}

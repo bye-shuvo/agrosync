@@ -1,0 +1,925 @@
+{
+  "crops": [
+    {
+      "type": "Annual",
+      "category": [
+        {
+          "name": "Cereal Crops",
+          "crops": [
+            {
+              "name": "Rice",
+              "lifespan": "3-6 months",
+              "description": "Rice is the staple food of Bangladesh. It is grown in three seasons: Aus, Aman, and Boro. Warm and humid conditions are ideal for its cultivation. Varieties include hybrid and traditional ones. It plays a vital role in the country's agriculture.",
+              "details": {
+                "main_season": "Kharif and Rabi",
+                "growing_conditions": "Warm, humid climate with plenty of water",
+                "key_varieties": [
+                  "BRRI Dhan",
+                  "Hybrid Rice",
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "40 - 50"
+              }
+            },
+            {
+              "name": "Maize",
+              "lifespan": "3-4 months",
+              "description": "Maize is a versatile cereal crop widely grown in Bangladesh for food, fodder, and industrial use. It thrives in well-drained soil and warm climates.",
+              "details": {
+                "main_season": "Rabi",
+                "growing_conditions": "Warm climate with well-drained soil",
+                "key_varieties": [
+                  "BARI Maize",
+                  "Hybrid Maize"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "8 - 10"
+              }
+            },
+            {
+              "name": "Wheat",
+              "lifespan": "3-4 months",
+              "description": "Wheat is a significant cereal crop in Bangladesh, particularly grown in the Rabi season. It is used as a staple food and thrives in cool, dry climates.",
+              "details": {
+                "main_season": "Rabi",
+                "growing_conditions": "Cool, dry climate with well-drained loamy soil",
+                "key_varieties": [
+                  "BARI Gom",
+                  "Shatabdi",
+                  "Protiva"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "30 - 40"
+              }
+            },
+            {
+              "name": "Barley",
+              "lifespan": "3-4 months",
+              "description": "Barley is a hardy cereal crop grown in Bangladesh for food, fodder, and brewing purposes. It thrives in cooler climates and marginal soils.",
+              "details": {
+                "main_season": "Rabi",
+                "growing_conditions": "Cool, dry climate with moderately fertile soil",
+                "key_varieties": [
+                  "BARI Barley",
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "25 - 30"
+              }
+            },
+            {
+              "name": "Millet",
+              "lifespan": "3-4 months",
+              "description": "Millet is a drought-resistant cereal crop grown in Bangladesh, primarily in arid and semi-arid regions. It is used as both human food and animal feed.",
+              "details": {
+                "main_season": "Kharif",
+                "growing_conditions": "Warm, dry climate with sandy or loamy soil",
+                "key_varieties": [
+                  "BARI Millet",
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "8 - 10"
+              }
+            },
+            {
+              "name": "Sorghum",
+              "lifespan": "3-4 months",
+              "description": "Sorghum is a resilient cereal crop grown in Bangladesh, especially in areas prone to drought. It is used for food, fodder, and brewing.",
+              "details": {
+                "main_season": "Kharif",
+                "growing_conditions": "Hot and dry conditions with well-drained soil",
+                "key_varieties": [
+                  "BARI Sorghum",
+                  "Hybrid Sorghum"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "5 - 7"
+              }
+            },
+            {
+              "name": "Foxtail Millet",
+              "lifespan": "3-4 months",
+              "description": "Foxtail millet is an ancient cereal crop grown in Bangladesh. It is highly nutritious and thrives in dry, marginal soils.",
+              "details": {
+                "main_season": "Kharif",
+                "growing_conditions": "Warm climate with sandy or loamy soil",
+                "key_varieties": [
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "4 - 6"
+              }
+            },
+            {
+              "name": "Oats",
+              "lifespan": "3-4 months",
+              "description": "Oats are increasingly grown in Bangladesh as a cereal crop for fodder and human consumption. It thrives in cool, moist climates.",
+              "details": {
+                "main_season": "Rabi",
+                "growing_conditions": "Cool, moist climate with well-drained soil",
+                "key_varieties": [
+                  "BARI Oats",
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "20 - 25"
+              }
+            },
+            {
+              "name": "Teff",
+              "lifespan": "3-4 months",
+              "description": "Teff is a cereal crop grown in small areas of Bangladesh. It is known for its high nutritional value and thrives in a variety of soils.",
+              "details": {
+                "main_season": "Kharif",
+                "growing_conditions": "Warm climate with fertile, well-drained soil",
+                "key_varieties": [
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "10 - 12"
+              }
+            },
+            {
+              "name": "Pearl Millet",
+              "lifespan": "3-4 months",
+              "description": "Pearl millet is a hardy cereal crop grown in arid and semi-arid regions of Bangladesh. It is used for both human consumption and animal feed.",
+              "details": {
+                "main_season": "Kharif",
+                "growing_conditions": "Hot, dry climate with sandy or loamy soil",
+                "key_varieties": [
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "7 - 9"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Pulses",
+          "crops": [
+            {
+              "name": "Lentil",
+              "lifespan": "3-4 months",
+              "description": "Lentils are a popular pulse crop in Bangladesh. They are a rich source of protein and are often consumed as a staple food. They can tolerate a wide range of climatic conditions and are grown in both Rabi and Kharif seasons.",
+              "details": {
+                "main_season": "Rabi and Kharif",
+                "growing_conditions": "Tolerant to various climatic conditions",
+                "key_varieties": [
+                  "Red Lentil",
+                  "Yellow Lentil",
+                  "Green Lentil"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "15 - 20"
+              }
+            },
+            {
+              "name": "Bean",
+              "lifespan": "1 year",
+              "description": "Beans are annual plants grown for their edible seeds, which come in various sizes, shapes, and colors. They are rich in protein and commonly used in cooking, especially in stews, soups, and salads.",
+              "details": {
+                "mainSeason": "Summer",
+                "growingCondition": "Warm, well-drained soil with plenty of sunlight",
+                "key_varieties": [
+                  "Green Bean",
+                  "Kidney Bean",
+                  "Lima Bean",
+                  "Black Bean"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "1500 - 2000"
+              }
+            },
+            {
+              "name": "Black Gram",
+              "lifespan": "3-4 months",
+              "description": "Black Gram is a pulse crop widely cultivated in Bangladesh. It grows well in warm and moist climates and is rich in protein.",
+              "details": {
+                "main_season": "Kharif",
+                "growing_conditions": "Warm and moist climate",
+                "key_varieties": [
+                  "Mashkalai",
+                  "Hybrid Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "6 - 8"
+              }
+            },
+            {
+              "name": "Chickpea",
+              "lifespan": "4-5 months",
+              "description": "Chickpea is an important pulse crop in Bangladesh, grown mainly during the Rabi season. It is a high-protein legume that thrives in cool and dry conditions.",
+              "details": {
+                "main_season": "Rabi",
+                "growing_conditions": "Cool and dry climate with well-drained loamy soil",
+                "key_varieties": [
+                  "BARI Chola",
+                  "Hybrid Chickpea"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "35 - 45"
+              }
+            },
+            {
+              "name": "Mung Bean",
+              "lifespan": "2-3 months",
+              "description": "Mung Bean is a fast-growing pulse crop grown in Bangladesh. It is highly nutritious and thrives in warm, humid climates.",
+              "details": {
+                "main_season": "Kharif and Rabi",
+                "growing_conditions": "Warm, humid climate with well-drained soil",
+                "key_varieties": [
+                  "BINA Moog",
+                  "BARI Moog"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "15 - 18"
+              }
+            },
+            {
+              "name": "Grass Pea",
+              "lifespan": "4-5 months",
+              "description": "Grass Pea is a hardy pulse crop grown in Bangladesh, especially in waterlogged or low-fertility soils. It is used for food and fodder.",
+              "details": {
+                "main_season": "Rabi",
+                "growing_conditions": "Can tolerate waterlogging and low-fertility soils",
+                "key_varieties": [
+                  "BARI Khesari",
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "30 - 35"
+              }
+            },
+            {
+              "name": "Pigeon Pea",
+              "lifespan": "5-6 months",
+              "description": "Pigeon Pea is a protein-rich pulse crop grown in small areas of Bangladesh. It is drought-resistant and thrives in well-drained soil.",
+              "details": {
+                "main_season": "Kharif",
+                "growing_conditions": "Drought-resistant and prefers well-drained soil",
+                "key_varieties": [
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "10 - 12"
+              }
+            },
+            {
+              "name": "Soybean",
+              "lifespan": "3-4 months",
+              "description": "Soybean is an increasingly popular pulse crop in Bangladesh, valued for its high protein and oil content. It grows well in warm and sunny climates.",
+              "details": {
+                "main_season": "Kharif and Rabi",
+                "growing_conditions": "Warm, sunny climate with well-drained soil",
+                "key_varieties": [
+                  "BARI Soybean",
+                  "Hybrid Soybean"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "40 - 50"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Oilseeds",
+          "crops": [
+            {
+              "name": "Mustard",
+              "lifespan": "3-4 months",
+              "description": "Mustard is an important oilseed crop in Bangladesh. It is grown primarily for its oil, which is used for cooking and other purposes. Mustard seeds are also used as a spice. It is a Rabi crop and grows well in cool, dry conditions. Different varieties of mustard are cultivated, including brown and yellow.",
+              "details": {
+                "mainSeason": "Rabi",
+                "growingCondition": "Cool, dry climate",
+                "key_varieties": [
+                  "Brown Mustard",
+                  "Yellow Mustard"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "15 - 20"
+              }
+            },
+            {
+              "name": "Sesame",
+              "lifespan": "3-4 months",
+              "description": "Sesame is a drought-tolerant oilseed crop widely grown in Bangladesh. It is used for oil extraction and culinary purposes. It thrives in warm climates with sandy loam soil.",
+              "details": {
+                "mainSeason": "Kharif",
+                "growingCondition": "Warm climate with sandy loam soil",
+                "key_varieties": [
+                  "BARI Sesame",
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "4 - 5"
+              }
+            },
+            {
+              "name": "Groundnut",
+              "lifespan": "4-5 months",
+              "description": "Groundnut is a popular oilseed crop in Bangladesh, grown mainly in sandy or well-drained soils. It is used for oil production and as a nutritious food source.",
+              "details": {
+                "mainSeason": "Kharif and Rabi",
+                "growingCondition": "Sandy or well-drained soils",
+                "key_varieties": [
+                  "Dhaka-1",
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "40 - 50"
+              }
+            },
+            {
+              "name": "Sunflower",
+              "lifespan": "3-4 months",
+              "description": "Sunflower is an emerging oilseed crop in Bangladesh. It is cultivated for its high-quality oil and thrives in a wide range of soils under both Kharif and Rabi seasons.",
+              "details": {
+                "mainSeason": "Kharif and Rabi",
+                "growingCondition": "Wide range of soils with moderate water requirements",
+                "key_varieties": [
+                  "BARI Sunflower",
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "1 - 2"
+              }
+            },
+            {
+              "name": "Linseed",
+              "lifespan": "4-5 months",
+              "description": "Linseed is a traditional oilseed crop in Bangladesh, grown mainly during the Rabi season. It is valued for its oil, which is used in food and industrial applications.",
+              "details": {
+                "mainSeason": "Rabi",
+                "growingCondition": "Cool, dry climate with loamy soils",
+                "key_varieties": [
+                  "BARI Linseed",
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "20 - 25"
+              }
+            },
+            {
+              "name": "Castor",
+              "lifespan": "4-6 months",
+              "description": "Castor is an oilseed crop grown on a limited scale in Bangladesh. Its oil is used in industry, particularly in the production of bio-based lubricants and cosmetics.",
+              "details": {
+                "mainSeason": "Rabi and Kharif",
+                "growingCondition": "Thrives in warm climates with well-drained soil",
+                "key_varieties": [
+                  "Hybrid Castor",
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "8 - 10"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Vegetables",
+          "crops": [
+            {
+              "name": "Tomato",
+              "lifespan": "2-3 months",
+              "description": "Tomatoes are a versatile vegetable crop used in various culinary applications. They thrive in warm, sunny conditions and well-drained soil. Different varieties of tomatoes are cultivated, including round, oval, and cherry tomatoes. Bangladesh is a significant producer of tomatoes.",
+              "details": {
+                "mainSeason": "Rabi",
+                "growingCondition": "Warm, sunny climate, well-drained soil",
+                "key_varieties": [
+                  "Roma",
+                  "Cherry",
+                  "Hybrid Tomato"
+                ]
+              },
+              "quantityPerAcre": {
+                "seedlings": 10000
+              }
+            },
+            {
+              "name": "Potato",
+              "lifespan": "3-4 months",
+              "description": "Potatoes are a staple vegetable in Bangladesh. They are widely grown during the Rabi season and require cool temperatures and well-drained soil.",
+              "details": {
+                "mainSeason": "Rabi",
+                "growingCondition": "Cool climate, well-drained soil",
+                "key_varieties": [
+                  "Diamant",
+                  "Cardinal",
+                  "Granola"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "800 - 1000"
+              }
+            },
+            {
+              "name": "Onion",
+              "lifespan": "3-4 months",
+              "description": "Onions are a key ingredient in Bangladeshi cuisine and are grown in well-drained, fertile soil. They are primarily cultivated during the Rabi season.",
+              "details": {
+                "mainSeason": "Rabi",
+                "growingCondition": "Cool climate, well-drained fertile soil",
+                "key_varieties": [
+                  "Taherpuri",
+                  "BARI Onion"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "4 - 5"
+              }
+            },
+            {
+              "name": "Brinjal (Eggplant)",
+              "lifespan": "3-4 months",
+              "description": "Brinjal is a widely cultivated vegetable in Bangladesh and is used in a variety of dishes. It grows well in warm climates with fertile, well-drained soil.",
+              "details": {
+                "mainSeason": "Kharif and Rabi",
+                "growingCondition": "Warm climate, fertile soil",
+                "key_varieties": [
+                  "BARI Brinjal",
+                  "Hybrid Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seedlings": "12000 - 15000"
+              }
+            },
+            {
+              "name": "Okra (Lady’s Finger)",
+              "lifespan": "3-4 months",
+              "description": "Okra is a summer vegetable grown in Bangladesh. It thrives in warm, humid climates with well-drained soil.",
+              "details": {
+                "mainSeason": "Kharif",
+                "growingCondition": "Warm, humid climate, well-drained soil",
+                "key_varieties": [
+                  "Hybrid Okra",
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "8 - 10"
+              }
+            },
+            {
+              "name": "Cabbage",
+              "lifespan": "3-4 months",
+              "description": "Cabbage is a popular winter vegetable in Bangladesh, grown for its leafy heads. It requires cool climates and fertile soil.",
+              "details": {
+                "mainSeason": "Rabi",
+                "growingCondition": "Cool climate, fertile soil",
+                "key_varieties": [
+                  "BARI Cabbage",
+                  "Hybrid Cabbage"
+                ]
+              },
+              "quantityPerAcre": {
+                "seedlings": "8000 - 10000"
+              }
+            },
+            {
+              "name": "Cauliflower",
+              "lifespan": "3-4 months",
+              "description": "Cauliflower is a winter vegetable widely grown in Bangladesh. It prefers cool temperatures and well-drained, fertile soil.",
+              "details": {
+                "mainSeason": "Rabi",
+                "growingCondition": "Cool climate, fertile soil",
+                "key_varieties": [
+                  "BARI Cauliflower",
+                  "Snowball"
+                ]
+              },
+              "quantityPerAcre": {
+                "seedlings": "8000 - 10000"
+              }
+            },
+            {
+              "name": "Spinach",
+              "lifespan": "2-3 months",
+              "description": "Spinach is a leafy vegetable rich in nutrients. It grows well in cool climates with moist, fertile soil.",
+              "details": {
+                "mainSeason": "Rabi",
+                "growingCondition": "Cool climate, moist fertile soil",
+                "key_varieties": [
+                  "BARI Spinach",
+                  "Local Spinach"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "10 - 12"
+              }
+            },
+            {
+              "name": "Bottle Gourd",
+              "lifespan": "3-4 months",
+              "description": "Bottle gourd is a summer vegetable widely grown in Bangladesh. It thrives in warm, humid climates and requires trellis support.",
+              "details": {
+                "mainSeason": "Kharif",
+                "growingCondition": "Warm, humid climate, trellis support",
+                "key_varieties": [
+                  "Hybrid Bottle Gourd",
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "1 - 1.5"
+              }
+            },
+            {
+              "name": "Pumpkin",
+              "lifespan": "3-4 months",
+              "description": "Pumpkins are a popular vegetable in Bangladesh, known for their nutritional value. They grow well in warm climates with well-drained soil.",
+              "details": {
+                "mainSeason": "Kharif",
+                "growingCondition": "Warm climate, well-drained soil",
+                "key_varieties": [
+                  "Hybrid Pumpkin",
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "2 - 3"
+              }
+            },
+            {
+              "name": "Chili",
+              "lifespan": "4-5 months",
+              "description": "Chili is a widely grown spice crop in Bangladesh. It requires warm climates and fertile soil for optimal growth.",
+              "details": {
+                "mainSeason": "Kharif and Rabi",
+                "growingCondition": "Warm climate, fertile soil",
+                "key_varieties": [
+                  "Hybrid Chili",
+                  "BARI Chili"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "1 - 1.5"
+              }
+            },
+            {
+              "name": "Carrot",
+              "lifespan": "3-4 months",
+              "description": "Carrots are a popular root vegetable in Bangladesh, grown during the winter season. They require cool climates and fertile soil.",
+              "details": {
+                "mainSeason": "Rabi",
+                "growingCondition": "Cool climate, fertile soil",
+                "key_varieties": [
+                  "Orange Carrot",
+                  "Hybrid Carrot"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "2 - 3"
+              }
+            },
+            {
+              "name": "Radish",
+              "lifespan": "2-3 months",
+              "description": "Radish is a root vegetable grown during the winter season in Bangladesh. It requires fertile soil with good drainage and is known for its fast growth.",
+              "details": {
+                "mainSeason": "Rabi",
+                "growingCondition": "Cool climate, well-drained fertile soil",
+                "key_varieties": [
+                  "White Radish",
+                  "Red Radish",
+                  "Hybrid Radish"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "2 - 3"
+              }
+            },
+            {
+              "name": "Bitter Gourd",
+              "lifespan": "3-4 months",
+              "description": "Bitter gourd is a summer vegetable known for its medicinal properties. It grows well in warm, humid climates with proper trellis support.",
+              "details": {
+                "mainSeason": "Kharif",
+                "growingCondition": "Warm, humid climate, trellis support",
+                "key_varieties": [
+                  "Hybrid Bitter Gourd",
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "1 - 2"
+              }
+            },
+            {
+              "name": "Sweet Corn",
+              "lifespan": "2-3 months",
+              "description": "Sweet corn is a specialty vegetable grown in Bangladesh, mainly for fresh consumption. It grows well in a warm climate and well-drained soil.",
+              "details": {
+                "mainSeason": "Kharif",
+                "growingCondition": "Warm climate, well-drained soil",
+                "key_varieties": [
+                  "Hybrid Sweet Corn",
+                  "Golden Sweet Corn"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "8 - 10"
+              }
+            },
+            {
+              "name": "Turnip",
+              "lifespan": "2-3 months",
+              "description": "Turnip is a root vegetable grown in Bangladesh during the winter season. It requires cool temperatures and fertile, well-drained soil.",
+              "details": {
+                "mainSeason": "Rabi",
+                "growingCondition": "Cool climate, fertile, well-drained soil",
+                "key_varieties": [
+                  "White Turnip",
+                  "Purple Top Turnip"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "1 - 2"
+              }
+            },
+            {
+              "name": "Snake Gourd",
+              "lifespan": "3-4 months",
+              "description": "Snake gourd is a summer vegetable known for its long fruit. It thrives in warm, humid climates and requires trellis support for better yield.",
+              "details": {
+                "mainSeason": "Kharif",
+                "growingCondition": "Warm, humid climate, trellis support",
+                "key_varieties": [
+                  "Hybrid Snake Gourd",
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "1 - 1.5"
+              }
+            },
+            {
+              "name": "Green Beans",
+              "lifespan": "2-3 months",
+              "description": "Green beans are a popular vegetable in Bangladesh, grown for their tender pods. They thrive in warm climates and well-drained soil.",
+              "details": {
+                "mainSeason": "Kharif",
+                "growingCondition": "Warm climate, well-drained soil",
+                "key_varieties": [
+                  "French Beans",
+                  "Yardlong Beans"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "6 - 8"
+              }
+            },
+            {
+              "name": "Cucumber",
+              "lifespan": "2-3 months",
+              "description": "Cucumber is a widely grown vegetable in Bangladesh, especially during the summer season. It grows well in warm, humid conditions with well-drained soil.",
+              "details": {
+                "mainSeason": "Kharif",
+                "growingCondition": "Warm, humid climate, well-drained soil",
+                "key_varieties": [
+                  "Hybrid Cucumber",
+                  "Local Varieties"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "1 - 1.5"
+              }
+            },
+            {
+              "name": "Garlic",
+              "lifespan": "4-5 months",
+              "description": "Garlic is a widely used culinary ingredient in Bangladesh. It grows well in cool climates and requires fertile, well-drained soil.",
+              "details": {
+                "mainSeason": "Rabi",
+                "growingCondition": "Cool climate, fertile, well-drained soil",
+                "key_varieties": [
+                  "BARI Garlic",
+                  "Local Garlic"
+                ]
+              },
+              "quantityPerAcre": {
+                "seeds": "200 - 250"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Perennial",
+      "category": [
+        {
+          "name": "Fruits",
+          "crops": [
+            {
+              "name": "Mango",
+              "lifespan": "5-10 years",
+              "description": "Mango is a popular tropical fruit tree. It requires warm, humid climates. Different varieties of mangoes are cultivated, varying in size, shape, and sweetness. Mangoes are consumed fresh, dried, or used in various culinary preparations.",
+              "details": {
+                "mainSeason": "Summer",
+                "growingCondition": "Warm, humid climate",
+                "key_varieties": [
+                  "Fazli",
+                  "Amrapali",
+                  "Keshur"
+                ]
+              },
+              "quantityPerAcre": {
+                "plants": 200
+              }
+            },
+            {
+              "name": "Jackfruit",
+              "lifespan": "10-15 years",
+              "description": "Jackfruit is the largest tree-borne fruit, native to Southwest India. The fruit has a sweet, tropical flavor and is used in both ripe and unripe forms for cooking. It thrives in hot, tropical climates.",
+              "details": {
+                "mainSeason": "Summer",
+                "growingCondition": "Warm, tropical climate",
+                "key_varieties": [
+                  "Kathal",
+                  "Black Jack"
+                ]
+              },
+              "quantityPerAcre": {
+                "plants": 40
+              }
+            },
+            {
+              "name": "Guava",
+              "lifespan": "4-10 years",
+              "description": "Guava is a tropical fruit known for its sweet and tangy taste. It is rich in vitamin C and is grown widely in Bangladesh, especially during the winter season.",
+              "details": {
+                "mainSeason": "Winter",
+                "growingCondition": "Tropical and subtropical climates",
+                "key_varieties": [
+                  "Apple Guava",
+                  "Lemon Guava"
+                ]
+              },
+              "quantityPerAcre": {
+                "plants": 250
+              }
+            },
+            {
+              "name": "Papaya",
+              "lifespan": "3-5 years",
+              "description": "Papaya is a fast-growing tropical fruit tree. It produces sweet and flavorful fruits that are consumed raw or used in juices and culinary dishes.",
+              "details": {
+                "mainSeason": "Year-round",
+                "growingCondition": "Warm, tropical climate",
+                "key_varieties": [
+                  "Red Lady",
+                  "Solo"
+                ]
+              },
+              "quantityPerAcre": {
+                "plants": 300
+              }
+            },
+            {
+              "name": "Lychee",
+              "lifespan": "20-40 years",
+              "description": "Lychee is a small, round tropical fruit known for its sweet and fragrant flesh. It is typically grown in regions with warm, humid climates and is popular during the summer months.",
+              "details": {
+                "mainSeason": "Summer",
+                "growingCondition": "Warm, tropical climates",
+                "key_varieties": [
+                  "Bengal Lychee",
+                  "China Lychee"
+                ]
+              },
+              "quantityPerAcre": {
+                "plants": 150
+              }
+            },
+            {
+              "name": "Banana",
+              "lifespan": "5-7 years",
+              "description": "Banana is one of the most widely cultivated fruits in Bangladesh. The fruit is sweet and eaten raw, as well as used in cooking and baking.",
+              "details": {
+                "mainSeason": "Year-round",
+                "growingCondition": "Tropical and subtropical climates",
+                "key_varieties": [
+                  "Kachalu",
+                  "Cavendish"
+                ]
+              },
+              "quantityPerAcre": {
+                "plants": 500
+              }
+            },
+            {
+              "name": "Pineapple",
+              "lifespan": "2-3 years",
+              "description": "Pineapple is a tropical fruit with a distinctive sweet and tangy flavor. It is cultivated in tropical regions and is enjoyed fresh, in juices, or as part of culinary dishes.",
+              "details": {
+                "mainSeason": "Summer",
+                "growingCondition": "Tropical, well-drained soil",
+                "key_varieties": [
+                  "Queen",
+                  "Red Spanish"
+                ]
+              },
+              "quantityPerAcre": {
+                "plants": 500
+              }
+            },
+            {
+              "name": "Coconut",
+              "lifespan": "30-60 years",
+              "description": "Coconut is a vital fruit in tropical countries, widely used for its water, milk, and flesh. It grows in coastal regions and is essential in many dishes.",
+              "details": {
+                "mainSeason": "Year-round",
+                "growingCondition": "Coastal tropical climates",
+                "key_varieties": [
+                  "King Coconut",
+                  "Green Coconut"
+                ]
+              },
+              "quantityPerAcre": {
+                "plants": 60
+              }
+            },
+            {
+              "name": "Pomelo",
+              "lifespan": "10-15 years",
+              "description": "Pomelo is a large citrus fruit known for its mild, sweet flavor. It grows well in subtropical and tropical climates and is consumed fresh or juiced.",
+              "details": {
+                "mainSeason": "Winter",
+                "growingCondition": "Tropical and subtropical climates",
+                "key_varieties": [
+                  "Shiranui",
+                  "Chandler"
+                ]
+              },
+              "quantityPerAcre": {
+                "plants": 100
+              }
+            },
+            {
+              "name": "Longan",
+              "lifespan": "20-30 years",
+              "description": "Longan is a tropical fruit related to lychee. It has a sweet, translucent flesh and is widely cultivated in Southeast Asia.",
+              "details": {
+                "mainSeason": "Summer",
+                "growingCondition": "Tropical climates",
+                "key_varieties": [
+                  "Biew Kiew",
+                  "Dawn Red"
+                ]
+              },
+              "quantityPerAcre": {
+                "plants": 200
+              }
+            },
+            {
+              "name": "Watermelon",
+              "lifespan": "1-2 years",
+              "description": "Watermelon is a warm-season fruit that thrives in hot climates. Known for its high water content, it is a refreshing summer fruit, commonly consumed fresh, in juices, or as part of salads.",
+              "details": {
+                "mainSeason": "Summer",
+                "growingCondition": "Warm, sunny climate with well-drained soil",
+                "key_varieties": [
+                  "Seedless",
+                  "Crimson Sweet",
+                  "Yellow Watermelon"
+                ]
+              },
+              "quantityPerAcre": {
+                "plants": 1000
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
