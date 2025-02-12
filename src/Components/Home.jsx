@@ -18,7 +18,6 @@ import mlModelImprovement from "../images/ml.jpg";
 import login from "../images/login.png";
 import weatherForecasting from "../images/precise-farming.png";
 
-src/images/crop-arrow.png
 const Home = () => {
   const [isVisible , setIsVisible] = useState(false);
   const [lastScrollY , setLastScrollY] = useState(0);
