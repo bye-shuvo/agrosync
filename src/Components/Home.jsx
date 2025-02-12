@@ -16,7 +16,7 @@ import borderBelow from "../images/border-below.png"
 import marketTrends from "../images/Market_trends.png";
 import mlModelImprovement from "../images/ml.jpg";
 import login from "../images/login.png";
-import weatherForecasting from "../images/weather-forecasting.png";
+import weatherForecasting from "../images/precise-farming.png";
 
 src/images/crop-arrow.png
 const Home = () => {
