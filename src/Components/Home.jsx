@@ -6,7 +6,7 @@ import Footer from "./Footer.jsx";
 import Chatbot from "./Chatbot.jsx";
 import Newsletter from "./Newsletter.jsx";
 import grassline from "../images/grass-line.png";
-import magnifyingGlass from "../images/magnifying-glass.png";
+import magnifyingGlass from "../images/magnify.jpeg";
 import chatbubble from "../images/chat-bubble.png";
 import seeds from "../images/seeds.png";
 import arrowRight from "../images/arrow-right.svg";
