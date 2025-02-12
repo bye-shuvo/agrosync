@@ -88,7 +88,7 @@ const Home = () => {
         className="md:p-20 relative h-auto md:h-screen md:w-screen grid grid-cols-1 md:grid-cols-3 md:gap-14 gap-10 place-items-center"
       >
         <img
-          src="src/images/grass-line.png"
+          src="/grass-line.png"
           alt="grass-line"
           className="absolute top-[-1.4rem] md:top-[-1.5rem] left-0 w-full h-[1.5rem] object-cover"
         />
