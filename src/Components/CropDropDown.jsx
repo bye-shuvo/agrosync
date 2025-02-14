@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
+import cropsJson from "../assets/Crops.json";
 
 const CropDropDown = ({ handleValue, handleType, handleCategory , selectedValue }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -12,7 +13,7 @@ const CropDropDown = ({ handleValue, handleType, handleCategory , selectedValue 
 
   //Fetching Crops data
   const fetchCrops = async () => {
-    const response = await fetch("https://seed-calculator.vercel.app/api/crops");
+    const response = await fetch(cropsJson);
     const data = await response.json();
     setCrops(data.crops);
   };
