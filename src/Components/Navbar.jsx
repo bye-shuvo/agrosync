@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import borderBelow from "../images/border-below.png";
+
 
 const Navbar = ({ hero , about, tools , footer , newsLetter}) => {
   const [isVisible, setIsVisible] = useState(true);
@@ -49,7 +51,7 @@ const Navbar = ({ hero , about, tools , footer , newsLetter}) => {
           >
             <img
               className="absolute opacity-0 group-hover:opacity-100 bottom-[-0.2rem] right-0 transition-all duration-300 ease-in-out"
-              src="/src/images/border-below.png"
+              src={borderBelow}
               alt="border-below"
             />
             <Link to={"/"} className="">Home</Link>
@@ -60,7 +62,7 @@ const Navbar = ({ hero , about, tools , footer , newsLetter}) => {
           >
             <img
               className="absolute opacity-0 group-hover:opacity-100 bottom-[-0.2rem] right-0 transition-all duration-300 ease-in-out"
-              src="/src/images/border-below.png"
+              src={borderBelow}
               alt="border-below"
             />
             <Link to={"/"}>Tools</Link>
@@ -71,7 +73,7 @@ const Navbar = ({ hero , about, tools , footer , newsLetter}) => {
           >
             <img
               className="absolute opacity-0 group-hover:opacity-100 bottom-[-0.2rem] right-0 transition-all duration-300 ease-in-out"
-              src="/src/images/border-below.png"
+              src={borderBelow}
               alt="border-below"
             />
             About
@@ -82,7 +84,7 @@ const Navbar = ({ hero , about, tools , footer , newsLetter}) => {
           >
             <img
               className="absolute opacity-0 group-hover:opacity-100 bottom-[-0.2rem] right-0 transition-all duration-300 ease-in-out"
-              src="/src/images/border-below.png"
+              src={borderBelow}
               alt="border-below"
             />
             Newsletter
@@ -93,7 +95,7 @@ const Navbar = ({ hero , about, tools , footer , newsLetter}) => {
           >
             <img
               className="absolute opacity-0 group-hover:opacity-100 bottom-[-0.2rem] right-0 transition-all duration-300 ease-in-out"
-              src="/src/images/border-below.png"
+              src={borderBelow}
               alt="border-below"
             />
             Contact
@@ -130,7 +132,7 @@ const Navbar = ({ hero , about, tools , footer , newsLetter}) => {
           >
             <img
               className="absolute opacity-0 group-hover:opacity-100 bottom-[-0.2rem] right-0 transition-all duration-300 ease-in-out"
-              src="/src/images/border-below.png"
+              src={borderBelow}
               alt="border-below"
             />
             <Link to={"/"}>Home</Link>
@@ -141,7 +143,7 @@ const Navbar = ({ hero , about, tools , footer , newsLetter}) => {
           >
             <img
               className="absolute opacity-0 group-hover:opacity-100 bottom-[-0.2rem] right-0 transition-all duration-300 ease-in-out"
-              src="/src/images/border-below.png"
+              src={borderBelow}
               alt="border-below"
             />
             <Link to={"/"}>Tools</Link>
@@ -152,7 +154,7 @@ const Navbar = ({ hero , about, tools , footer , newsLetter}) => {
           >
             <img
               className="absolute opacity-0 group-hover:opacity-100 bottom-[-0.2rem] right-0 transition-all duration-300 ease-in-out"
-              src="/src/images/border-below.png"
+              src={borderBelow}
               alt="border-below"
             />
             <Link to={"/"}>About</Link>
@@ -163,7 +165,7 @@ const Navbar = ({ hero , about, tools , footer , newsLetter}) => {
           >
             <img
               className="absolute opacity-0 group-hover:opacity-100 bottom-[-0.2rem] right-0 transition-all duration-300 ease-in-out"
-              src="/src/images/border-below.png"
+              src={borderBelow}
               alt="border-below"
             />
             <Link to={"/"}>Newsletter</Link>
@@ -174,7 +176,7 @@ const Navbar = ({ hero , about, tools , footer , newsLetter}) => {
           >
             <img
               className="absolute opacity-0 group-hover:opacity-100 bottom-[-0.2rem] right-0 transition-all duration-300 ease-in-out"
-              src="/src/images/border-below.png"
+              src={borderBelow}
               alt="border-below"
             />
             <Link to={"/"}>Contact</Link>
