@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import leafImage from "../images/rice-leaf.jpeg";
 
 const CropDiseaseDetector = () => {
   const [image, setImage] = useState(null);
@@ -94,7 +95,7 @@ const CropDiseaseDetector = () => {
           <div className="rounded-lg p-2 border-2 border-dashed border-slate-800">
             <img
               className="w-full h-64 object-cover rounded-xl"
-              src={`${image ? image : "/src/images/rice-leaf.jpeg"}`}
+              src={`${image ? image : leafImage}`}
               alt="Rice-leaf"
             />
           </div>
