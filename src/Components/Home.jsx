@@ -17,7 +17,6 @@ import marketTrends from "../images/Market_trends.png";
 import mlModelImprovement from "../images/ml.jpg";
 import login from "../images/login.png";
 import weatherForecasting from "../images/precise-farming.png";
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const Home = () => {
   const [isVisible , setIsVisible] = useState(false);
