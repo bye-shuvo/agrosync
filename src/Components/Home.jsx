@@ -57,7 +57,7 @@ const Home = () => {
   };
 
   return (
-    <div id="landing-page" className="scroll-smooth">
+    <div id="landing-page" className="scroll-smooth overflow-x-hidden">
       <Navbar hero = {scrollToLanding} about = {scrollToAbout} tools = {scrollToFeatures} footer = {scrollToFooter} newsLetter={scrollToNewsletter}/>
       <section
         id="hero-section"
