@@ -1,8 +1,6 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# A Mordern Web App for Farmers
+- Get prediction of any crop diseases(Initially Rice is added)
+- Get instant answer of all the quiries with our chatbot
+- Get instant quantity of agricultural seed or plants per unit land
+- Personalized API for seed calculation
+- Google gemini API for image prediction of rice crop to prdict the diseases
