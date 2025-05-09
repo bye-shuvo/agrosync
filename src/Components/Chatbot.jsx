@@ -113,7 +113,7 @@ const Chatbot = ({clicked}) => {
             </header>
             <div
               ref={scrollToEnd}
-              className={`min-h-[23rem] md:max-h-72 w-full overflow-y-auto p-4 pt-0 pb-0 scroll-m-0 scroll-smooth`}
+              className={`min-h-[60vh] md:min-h-[23rem] md:max-h-72 w-full overflow-y-auto p-4 pt-0 pb-0 scroll-m-0 scroll-smooth`}
             >
               {messages.map((message, index) => (
                 <div
