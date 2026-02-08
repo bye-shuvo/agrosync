@@ -57,14 +57,14 @@ const Home = () => {
   };
 
   return (
-    <div id="landing-page" className="scroll-smooth overflow-x-hidden">
+    <div id="landing-page" className="scroll-smooth max-w-[100vw]">
       <Navbar hero = {scrollToLanding} about = {scrollToAbout} tools = {scrollToFeatures} footer = {scrollToFooter} newsLetter={scrollToNewsletter}/>
       <section
         id="hero-section"
         ref={landingRef}
-        className="bg-[url(/src/images/agri_bg.jpeg)] bg-cover bg-no-repeat bg-center md:bg-center h-[93vh] md:h-screen md:w-screen flex flex-col md:justify-start items-center"
+        className="bg-[url(/src/images/agri_bg.jpeg)] bg-cover bg-no-repeat bg-center md:bg-center h-[93vh] md:min-h-screen flex flex-col md:justify-evenly items-center"
       >
-        <div className="relative top-[20%] flex flex-col items-center justify-start md:items-start md:max-w-[80%]">
+        <div className="mt-[50%] md:mt-10 flex flex-col items-center justify-start md:items-start md:max-w-[80%]">
           <h1
             id="headline"
             className="text-3xl leading-[2.5rem] md:leading-[5rem] text-[#ffffffea] md:text-7xl max-w-[80%] md:max-w-[80%] font-extrabold"
@@ -78,7 +78,7 @@ const Home = () => {
         </div>
         <div
           id="buttons"
-          className="relative top-[50%] md:top-[40%] flex justify-around md:justify-center items-center md:w-[90%] w-full"
+          className="flex justify-around md:justify-center items-center md:w-[90%] w-full"
         >
           <button
             onClick={scrollToFeatures}
@@ -97,7 +97,7 @@ const Home = () => {
       <section
         id="features-section"
         ref={featuresRef}
-        className="md:p-20 relative h-auto md:h-screen md:w-screen grid grid-cols-1 md:grid-cols-3 md:gap-14 gap-10 place-items-center"
+        className="md:p-20 relative h-auto md:h-screen grid grid-cols-1 md:grid-cols-3 md:gap-14 gap-10 place-items-center"
       >
         <img
           src={grassline}
@@ -298,7 +298,7 @@ const Home = () => {
       <section
         ref={aboutRef}
         id="about-section"
-        className="relative p-10 md:p-24 h-auto md:h-screen md:w-screen flex flex-col md:flex-row items-start justify-center gap-4 md:gap-16"
+        className="relative p-10 md:p-24 h-auto md:h-screen flex flex-col md:flex-row items-start justify-center gap-4 md:gap-16"
       >
         <div
           id="image"
@@ -424,7 +424,7 @@ const Home = () => {
       </section>
       <section
         id="target-section"
-        className="md:p-20 pb-10 md:pb-16 md:relative h-auto md:h-screen md:w-screen flex flex-col md:flex-row items-center md:items-start justify-between"
+        className="md:p-20 pb-10 md:pb-16 md:relative h-auto md:h-screen flex flex-col md:flex-row items-center md:items-start justify-between"
       >
         <h2
           id="target-title"
