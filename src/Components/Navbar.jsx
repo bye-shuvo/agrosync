@@ -32,12 +32,12 @@ const Navbar = ({ hero , about, tools , footer , newsLetter}) => {
 
   return (
     <nav
-      className={`text-white fixed top-0 left-0 w-full z-50 transition-transform duration-300 
+      className={`text-white fixed top-0 left-0 w-full flex flex-col md:flex-row z-50 transition-transform duration-300 
         ${isVisible ? "translate-y-0" : "-translate-y-full"}
         ${isScrolled ? "bg-[#2e5b3ca9]" : "bg-transparent"}
         `}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="w-full mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="text-4xl font-bold flex items-center">
           <i className="fas fa-seedling mr-2"></i> AgroSync
