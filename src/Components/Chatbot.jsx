@@ -1,40 +1,22 @@
 import React, { useState, useRef, useEffect, Fragment } from "react";
 import { GoogleGenAI } from "@google/genai";
 
-const Chatbot = ({ clicked , setIsClicked }) => {
+const Chatbot = ({ clicked, setIsClicked }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
-  const [isChatbotExpanded , setIsChatbotExpanded] = useState(false);
+  const [isChatbotExpanded, setIsChatbotExpanded] = useState(false);
   const [messages, setMessages] = useState([
     {
       sender: "bot",
       text: "Hello!👋 \n Welcome to AGROBOT. \n How can I help you today?",
     },
   ]);
-  const [isVisible, setIsVisible] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (lastScrollY > 740) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-      setLastScrollY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const initialFocus = useRef(null);
   const scrollToEnd = useRef(null);
 
   const genAI = new GoogleGenAI({ apiKey: import.meta.env.VITE_CHATBOT_KEY });
   //system instruction for the AgroSync Assistant
-const agrosyncSystemInstruction = `You are the official AgroSync Assistant for the AgroSync web application (agrosyncbd.vercel.app). Your purpose is to help users with their agricultural queries and guide them to the platform's digital tools.
+  const agrosyncSystemInstruction = `You are the official AgroSync Assistant for the AgroSync web application (agrosyncbd.vercel.app). Your purpose is to help users with their agricultural queries and guide them to the platform's digital tools.
 
 CRITICAL ENGAGEMENT RULES:
 - Never mention your underlying AI model, architecture, or technology provider under any circumstances.
@@ -60,13 +42,16 @@ PERSONALIZATION & PLATFORM TIE-IN:
         system_instruction: agrosyncSystemInstruction,
       });
 
-      setMessages((prev) => [
-        ...prev,
-        {
-          sender: "bot",
-          text: interaction.output_text,
-        },
-      ]);
+      setMessages((prev) => {
+        prev.pop();
+        return [
+          ...prev,
+          {
+            sender: "bot",
+            text: interaction.output_text,
+          },
+        ];
+      });
     } catch (error) {
       setMessages((prev) => [
         ...prev,
@@ -105,17 +90,28 @@ PERSONALIZATION & PLATFORM TIE-IN:
   }, [clicked]);
 
   return (
-    <div className="fixed bottom-20 right-4 flex items-center justify-center z-50">
+    <div className="fixed bottom-14 right-4 flex items-center justify-center z-50">
       {isOpen && (
-        <div className={`flex items-center justify-center z-50 rounded-lg bg-white shadow-slate-500 shadow-lg md:w-[25rem] tramsition-all ease-in-out duration-200`}>
-          <div className="bg-white rounded-lg overflow-hidden w-full max-w-md md:max-w-lg lg:max-w-xl relative h-full md:h-auto flex flex-col">
+        <div
+          className={`flex items-center justify-center z-50 rounded-lg bg-white shadow-slate-500 shadow-lg ${isChatbotExpanded ? "md:w-[80vw]" : "md:w-[25rem]"} transition-all ease-in-out duration-300`}
+        >
+          <div className="bg-white rounded-lg overflow-hidden w-full relative h-full md:h-auto flex flex-col">
             <header className="flex items-center justify-between border-b-[1.5px] border-slate-400 relative bg-[#2e5b3c] text-white p-2 px-8">
-              <button onClick={() => {setIsChatbotExpanded(true)}} className="hover:text-[#FFD700] transition ease-in-out" aria-label="Expand-Chatbot">
+              <button
+                onClick={() => {
+                  setIsChatbotExpanded(!isChatbotExpanded);
+                }}
+                className="hover:text-[#FFD700] transition ease-in-out"
+                aria-label="Expand-Chatbot"
+              >
                 <i class="fa-solid fa-up-right-and-down-left-from-center text-2xl"></i>
               </button>
               <p className="md:text-[2.8rem] font-bold">AGROBOT</p>
               <button
-                onClick={() => {setIsOpen(false); setIsClicked(false)}}
+                onClick={() => {
+                  setIsOpen(false);
+                  setIsClicked(false);
+                }}
                 className="hover:text-red-500 transition ease-in-out"
                 aria-label="Close-Chatbot"
               >
@@ -124,7 +120,7 @@ PERSONALIZATION & PLATFORM TIE-IN:
             </header>
             <div
               ref={scrollToEnd}
-              className={`min-h-[60vh] md:min-h-[23rem] md:max-h-72 w-full overflow-y-auto p-4 pt-0 pb-0 scroll-m-0 scroll-smooth`}
+              className={`${isChatbotExpanded ? "h-[65vh]" : "min-h-[60vh] md:min-h-[23rem] md:max-h-72"} w-full overflow-y-auto p-4 pt-0 pb-0 scroll-m-0 scroll-smooth transition-all ease-in-out duration-300`}
             >
               {messages.map((message, index) => (
                 <div
@@ -169,8 +165,7 @@ PERSONALIZATION & PLATFORM TIE-IN:
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     e.preventDefault();
-                    input !== null &&
-                    handleSendMessage();
+                    input !== null && handleSendMessage();
                   }
                 }}
                 className="flex-1 bg-[#2e5b3c]/10 focus:border-b-[3px] focus:border-[#2e5b3c] rounded-lg text-lg px-4 py-3 outline-none"
