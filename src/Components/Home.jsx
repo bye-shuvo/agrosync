@@ -532,8 +532,16 @@ const Home = () => {
       >
         <i className="fa-solid fa-angles-up"></i>
       </button>
+      <button
+        onClick={() => setIsClicked(true)}
+        className={`${
+          isVisible ? "" : "translate-x-[150%]"
+        } flex justify-center items-center z-20 fixed top-[70%] right-4 h-[3rem] w-[3rem] p-[1.2rem] bg-[#FFD700] text-[1.1rem] font-extrabold text-[#2e5b3c] rounded-full hover:bg-[#2e5b3c] hover:text-[#FFD700] transition-all duration-300 ease-in-out`}
+      >
+        <i className="fa-solid fa-robot scale-150"></i>
+      </button>
       <Footer ref= {footerRef}/>
-      <Chatbot clicked={isClicked} />
+      <Chatbot clicked={isClicked} setIsClicked={setIsClicked} />
     </div>
   );
 };

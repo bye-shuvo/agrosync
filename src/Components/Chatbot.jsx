@@ -1,112 +1,123 @@
-import React, { useState, useRef , useEffect , Fragment} from "react";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import React, { useState, useRef, useEffect, Fragment } from "react";
+import { GoogleGenAI } from "@google/genai";
 
-const Chatbot = ({clicked}) => {
+const Chatbot = ({ clicked , setIsClicked }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
+  const [isChatbotExpanded , setIsChatbotExpanded] = useState(false);
   const [messages, setMessages] = useState([
-     {
-       sender: "bot",
-       text: "Hello!👋 \n Welcome to AGROBOT. \n How can I help you today?",
-     },
-   ]);
-    const [isVisible , setIsVisible] = useState(false);
-    const [lastScrollY , setLastScrollY] = useState(0);
-   
-     const handleScroll = () =>{
-       if(lastScrollY > 740){
-         setIsVisible(true);
-       }else{
-         setIsVisible(false);
-       }
-       setLastScrollY(window.scrollY);
-     }
-     window.addEventListener("scroll" , handleScroll);
+    {
+      sender: "bot",
+      text: "Hello!👋 \n Welcome to AGROBOT. \n How can I help you today?",
+    },
+  ]);
+  const [isVisible, setIsVisible] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-   const initialFocus = useRef(null);
-   const scrollToEnd = useRef(null);
- 
-   const promptGeneration = async () => {
-     const apiKey = import.meta.env.VITE_CHATBOT_KEY;
-     const genAI = new GoogleGenerativeAI(apiKey);
-     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
- 
-     try {
-       let prompt = input;
-       const result = await model.generateContent(prompt);
-       const botResponse = result.response.text();
- 
-       setMessages((prev) => {
-         const updatedmessages = [...prev];
-         updatedmessages[updatedmessages.length - 1] = {
-           sender: "bot",
-           text: botResponse,
-         };
-         return updatedmessages;
-       });
-     } catch (error) {
-       setMessages((prev) => [
-         ...prev,
-         {
-           sender: "bot",
-           text: "Some Error occured!!! \n Please try again later.",
-         },
-       ]);
-       console.log(error.message);
-     }
-   };
- 
-   const handleSendMessage = () => {
-     setMessages((prev) => [...prev, { sender: "user", text: input }]);
- 
-     setTimeout(() => {
-       setMessages((prev) => [
-         ...prev,
-         { sender: "bot", text: "Thinking..." },
-       ]);
-       setInput("");
-       if (input.trim() !== "") {
-         promptGeneration();
-       }
-     }, 500);
-   };
- 
-   useEffect(() => {
-     if (scrollToEnd.current) {
-       scrollToEnd.current.scrollTop = scrollToEnd.current.scrollHeight;
-     }
-   }, [messages]);
-   
-   useEffect(() => {
-    if(clicked){
+  useEffect(() => {
+    const handleScroll = () => {
+      if (lastScrollY > 740) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+      setLastScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const initialFocus = useRef(null);
+  const scrollToEnd = useRef(null);
+
+  const genAI = new GoogleGenAI({ apiKey: import.meta.env.VITE_CHATBOT_KEY });
+  //system instruction for the AgroSync Assistant
+const agrosyncSystemInstruction = `You are the official AgroSync Assistant for the AgroSync web application (agrosyncbd.vercel.app). Your purpose is to help users with their agricultural queries and guide them to the platform's digital tools.
+
+CRITICAL ENGAGEMENT RULES:
+- Never mention your underlying AI model, architecture, or technology provider under any circumstances.
+- Never mention or link to GitHub repositories, source code, or development details.
+- Keep all responses concise, brief, and directly to the point. Avoid long text blocks.
+
+STRICT KNOWLEDGE BOUNDARY:
+- You only answer questions regarding agriculture, crop care, farming practices, and AgroSync's core platform tools:
+  1. Rice Leaf Disease Detection (via image upload).
+  2. The Seed Calculator tool.
+- If a query is completely unrelated to farming, agriculture, or the website (e.g., entertainment, general coding, politics), politely refuse in one short sentence: "I can only assist you with agricultural topics and AgroSync platform tools."
+
+PERSONALIZATION & PLATFORM TIE-IN:
+- Provide brief, actionable agricultural advice tailored to the user's specific crop or land size context.
+- ALWAYS end your brief advice by connecting it back to an AgroSync tool:
+  * If they ask about crop diseases or plant health, give a 1-2 sentence tip, then tell them to upload an image to AgroSync's Crop Disease Detector for a precise diagnosis.
+  * If they ask about planting density, spacing, or yields, give a quick standard metric, then direct them to use the AgroSync Seed Calculator to get exact amounts for their field size.`;
+  const promptGeneration = async (query) => {
+    try {
+      const interaction = await genAI.interactions.create({
+        model: "gemini-3.5-flash",
+        input: query,
+        system_instruction: agrosyncSystemInstruction,
+      });
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          sender: "bot",
+          text: interaction.output_text,
+        },
+      ]);
+    } catch (error) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          sender: "bot",
+          text: "Some Error occured!!! \n Please try again later.",
+        },
+      ]);
+      console.log(error.message);
+    }
+  };
+
+  const handleSendMessage = () => {
+    const trimmedInput = input.trim();
+    if (!trimmedInput) return;
+
+    setMessages((prev) => [...prev, { sender: "user", text: trimmedInput }]);
+    setInput("");
+
+    setTimeout(() => {
+      setMessages((prev) => [...prev, { sender: "bot", text: "Thinking..." }]);
+      promptGeneration(trimmedInput);
+    }, 500);
+  };
+
+  useEffect(() => {
+    if (scrollToEnd.current) {
+      scrollToEnd.current.scrollTop = scrollToEnd.current.scrollHeight;
+    }
+  }, [messages]);
+
+  useEffect(() => {
+    if (clicked) {
       setIsOpen(true);
     }
-   },[clicked]);
+  }, [clicked]);
 
   return (
     <div className="fixed bottom-20 right-4 flex items-center justify-center z-50">
-      {!isOpen && (
-        <button
-          id="chatbot-btn"
-          className={`${
-            isVisible ? "" : "translate-x-[150%]"
-          } h-[3.5rem] w-[3.5rem] flex items-center justify-center border-[#FFD700] border-[3px] rounded-full text-[#FFD700] hover:bg-[#FFD700] hover:text-white transition-all ease-in-out duration-200`}
-          onClick={() =>{setIsOpen(true); initialFocus.current.click()}}
-          aria-label="Open Chatbot"
-        >
-          <i className="fa-solid fa-message text-3xl"></i>
-        </button>
-      )}
-
       {isOpen && (
-        <div className="flex items-center justify-center z-50 rounded-lg bg-white shadow-slate-500 shadow-lg md:w-[25rem] tramsition-all ease-in-out duration-200">
+        <div className={`flex items-center justify-center z-50 rounded-lg bg-white shadow-slate-500 shadow-lg md:w-[25rem] tramsition-all ease-in-out duration-200`}>
           <div className="bg-white rounded-lg overflow-hidden w-full max-w-md md:max-w-lg lg:max-w-xl relative h-full md:h-auto flex flex-col">
-            <header className="flex items-center justify-center border-b-[1.5px] border-slate-400 relative bg-violet-600 text-white p-2">
+            <header className="flex items-center justify-between border-b-[1.5px] border-slate-400 relative bg-[#2e5b3c] text-white p-2 px-8">
+              <button onClick={() => {setIsChatbotExpanded(true)}} className="hover:text-[#FFD700] transition ease-in-out" aria-label="Expand-Chatbot">
+                <i class="fa-solid fa-up-right-and-down-left-from-center text-2xl"></i>
+              </button>
               <p className="md:text-[2.8rem] font-bold">AGROBOT</p>
               <button
-                onClick={() => setIsOpen(false)}
-                className="absolute top-4 right-4 text-white hover:text-red-500 focus:outline-none transition ease-in-out"
-                aria-label="Close Chatbot"
+                onClick={() => {setIsOpen(false); setIsClicked(false)}}
+                className="hover:text-red-500 transition ease-in-out"
+                aria-label="Close-Chatbot"
               >
                 <i className="fas fa-times text-3xl"></i>
               </button>
@@ -125,15 +136,15 @@ const Chatbot = ({clicked}) => {
                   } box-border p-2 w-full h-auto`}
                 >
                   {message.sender === "user" ? (
-                    <i className="fa-solid fa-user text-[2rem] text-violet-600"></i>
+                    <i className="fa-solid fa-user text-[2rem] text-[#2e5b3c]"></i>
                   ) : (
-                    <i className="fa-solid fa-robot text-[2rem] text-violet-600"></i>
+                    <i className="fa-solid fa-robot text-[2rem] text-[#2e5b3c]"></i>
                   )}
                   <p
                     className={`max-w-[75%] min-h-6 rounded-md p-3 text-lg  ${
                       message.sender === "user"
                         ? "mr-2 bg-gray-200 text-gray-800"
-                        : "ml-2 bg-violet-600 text-white"
+                        : "ml-2 bg-[#2e5b3c] text-white"
                     }`}
                   >
                     {message.text.split("\n").map((line, idx) => (
@@ -155,11 +166,18 @@ const Chatbot = ({clicked}) => {
                 placeholder="Enter Prompt"
                 onChange={(e) => setInput(e.target.value)}
                 value={input}
-                className="flex-1 bg-violet-100 focus:border-b-[3px] focus:border-violet-600 rounded-lg text-lg px-4 py-3 outline-none"
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    input !== null &&
+                    handleSendMessage();
+                  }
+                }}
+                className="flex-1 bg-[#2e5b3c]/10 focus:border-b-[3px] focus:border-[#2e5b3c] rounded-lg text-lg px-4 py-3 outline-none"
               />
               <button
                 onClick={handleSendMessage}
-                className="flex items-center justify-center text-violet-600 hover:text-violet-800 p-4"
+                className="flex items-center justify-center text-[#2e5b3c] hover:text-[#2e5b3c] p-4 transition-all ease-in-out"
               >
                 <i className="fa-solid fa-paper-plane text-3xl"></i>
               </button>

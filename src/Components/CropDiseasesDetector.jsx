@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
 import leafImage from "../images/rice-leaf.jpeg";
 
 const CropDiseaseDetector = () => {
@@ -21,54 +21,81 @@ const CropDiseaseDetector = () => {
       const response = await promptGeneration(file); // Wait for AI response
       setDiseaseInfo(response);
       setLoading(false); // Stop loading
+      console.log(response);
     } else {
       alert(
-        "Please select an image with a minimum size of 1024 * 1024 pixels."
+        "Please select an image with a minimum size of 1024 * 1024 pixels.",
       );
     }
   };
 
   // Initialize Google Generative AI
-  const genAI = new GoogleGenerativeAI(
-    import.meta.env.VITE_RICE_DISEASES_KEY
-  );
-  const model = genAI.getGenerativeModel({ model: "models/gemini-2.0-flash" });
+  const genAI = new GoogleGenAI({
+    apiKey: import.meta.env.VITE_RICE_DISEASES_KEY,
+  });
+
   // Function to analyze the image
   const promptGeneration = async (file) => {
     try {
-      const base64Data = await new Promise((resolve, reject) => {
+      const base64ImageString = await new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onloadend = () => resolve(reader.result.split(",")[1]);
         reader.onerror = reject;
       });
 
-      const result = await model.generateContent([
-        {
-          inlineData: {
-            data: base64Data,
-            mimeType: file.type,
-          },
+      //schema object
+      const riceLeafSchema = {
+        type: "OBJECT",
+        properties: {
+          is_rice_leaf: { type: "STRING", enum: ["Yes", "No"] },
+          rice_leaf_type: { type: "STRING", enum: ["Healthy", "Diseased"] },
+          disease_detected: { type: "STRING", enum: ["Yes", "No"] },
+          confidence: { type: "NUMBER" },
+          diseased_area_percentage: { type: "NUMBER" },
+          disease_description: { type: "STRING" },
         },
-        `Analyze this image and return a JSON response in this exact format:
-      {
-        "is_rice_leaf": "Yes" or "No",
-        "rice_leaf_type": "Healthy" or "Diseased" (if applicable),
-        "disease_detected": "Yes" or "No" (if applicable),
-        "confidence": "XX%",
-        "diseased_area_percentage": "XX%",
-        "disease_description": "Provide a 5-line description of the disease if detected. If healthy, return 'This is a healthy rice leaf. No disease detected.'. If not a rice leaf, return 'Upload a valid rice leaf image for disease detection.'"
-      }`,
-      ]);
+        required: [
+          "is_rice_leaf",
+          "rice_leaf_type",
+          "disease_detected",
+          "confidence",
+          "diseased_area_percentage",
+          "disease_description",
+        ],
+      };
 
-      const responseText = result.response.text();
+      //Tuning according to the usecase
+      const customPersona = `You are an expert, empathetic Agricultural Scientist representing [Your Name/Company]. 
+      Your tone should be professional yet encouraging to farmers. 
+      When writing descriptions, speak from the first-person perspective ("We detected...", "In our analysis...") 
+      and provide actionable, safe treatment suggestions instead of just naming the disease.`;
+
+      const interaction = await genAI.interactions.create({
+        model: "gemini-3.5-flash",
+        input: [
+          {
+            type: "text",
+            text: "Analyze this crop image for diseases and suggest treatments.",
+          },
+          {
+            type: "image",
+            data: base64ImageString, // Just the raw base64 string (omit the data:image/jpeg;base64, prefix)
+            mime_type: "image/jpeg", // Match your uploaded file type
+          },
+        ],
+        response_format: riceLeafSchema,
+        system_instruction: customPersona,
+      });
 
       // Extract JSON from AI response
-      const jsonStart = responseText.indexOf("{");
-      const jsonEnd = responseText.lastIndexOf("}");
+      const jsonStart = interaction.output_text.indexOf("{");
+      const jsonEnd = interaction.output_text.lastIndexOf("}");
       if (jsonStart !== -1 && jsonEnd !== -1) {
         // console.log(JSON.parse(responseText.substring(jsonStart, jsonEnd + 1)));
-        return JSON.parse(responseText.substring(jsonStart, jsonEnd + 1));
+        return JSON.parse(
+          interaction.output_text.substring(jsonStart, jsonEnd + 1),
+        );
       } else {
         throw new Error("Invalid JSON format received from AI.");
       }
@@ -124,7 +151,9 @@ const CropDiseaseDetector = () => {
           />
           <div className="text-center md:p-4">
             <i className="fas fa-cloud-upload-alt text-2xl md:text-4xl"></i>
-            <p className="md:mt-1 md:text-xl">📤 {fileName || "Click to Upload"}</p>
+            <p className="md:mt-1 md:text-xl">
+              📤 {fileName || "Click to Upload"}
+            </p>
           </div>
         </label>
 
@@ -136,16 +165,18 @@ const CropDiseaseDetector = () => {
             </p>
           ) : loading ? (
             <p className="text-lg text-white">🔄 Analyzing Image...</p>
-          ) : (
-            diseaseInfo && (
-              <div
-                className={`p-6 max-w-full max-h-[100%] border rounded-lg shadow-md mt-6 overflow-scroll ${
-                  diseaseInfo.disease_detected === "Yes"
-                    ? "bg-red-50 border-red-300"
-                    : "bg-green-50 border-green-300"
-                }`}
-              >
-                {diseaseInfo.is_rice_leaf === "Yes" && (
+          ) : diseaseInfo && !diseaseInfo.error ? (
+            <div
+              className={`p-6 max-w-full max-h-[100%] border rounded-lg shadow-md mt-6 overflow-y-scroll no-scrollbar ${
+                diseaseInfo.is_rice_leaf === "No"
+                  ? "bg-red-200 border-red-400"
+                  : diseaseInfo.disease_detected === "Yes"
+                    ? "bg-red-200 border-red-400"
+                    : "bg-green-200 border-green-400"
+              }`}
+            >
+              {diseaseInfo.is_rice_leaf === "Yes" && (
+                <>
                   <h2
                     className={`text-2xl font-semibold ${
                       diseaseInfo.disease_detected === "Yes"
@@ -153,42 +184,38 @@ const CropDiseaseDetector = () => {
                         : "text-green-800"
                     }`}
                   >
-                    Disease Status:{" "}
+                    Crop Status:{" "}
                     {diseaseInfo.disease_detected === "Yes"
                       ? "❌ Diseased"
                       : "✅ Healthy"}
                   </h2>
-                )}
-                {diseaseInfo.is_rice_leaf === "Yes" && (
-                  <>
-                    <p className="text-lg text-gray-700 mt-2">
-                      <b>Leaf Type:</b> {diseaseInfo.rice_leaf_type}
-                    </p>
-                    <p className="text-lg text-gray-700 mt-2">
-                      <b>Confidence:</b> {diseaseInfo.confidence}
-                    </p>
-                  </>
-                )}
-
-                {diseaseInfo.disease_detected === "Yes" && (
-                  <>
-                    <p className="text-lg text-gray-700 mt-2">
-                      <b>Affected Area:</b>{" "}
-                      {diseaseInfo.diseased_area_percentage}
-                    </p>
-                    <p className="text-lg text-gray-700 mt-2">
-                      <b>Disease Info:</b> {diseaseInfo.disease_description}
-                    </p>
-                  </>
-                )}
-
-                {diseaseInfo.is_rice_leaf === "No" && (
-                  <p className="text-lg text-red-700 mt-4 font-semibold">
-                    ⚠️ This is not a rice leaf! Please upload a valid image.
+                  <p className="text-lg text-gray-700 mt-2">
+                    <b>Leaf Type:</b> {diseaseInfo.rice_leaf_type}
                   </p>
-                )}
-              </div>
-            )
+                  <p className="text-lg text-gray-700 mt-2">
+                    <b>Confidence:</b> {Number(diseaseInfo.confidence) * 100}%
+                  </p>
+                  <p className="text-lg text-gray-700 mt-2">
+                    <b>Affected Area:</b> {diseaseInfo.diseased_area_percentage}
+                    %
+                  </p>
+                  <p className="text-lg text-gray-700 mt-2">
+                    <b>Overall Info:</b> {diseaseInfo.disease_description}
+                  </p>
+                </>
+              )}
+
+              {diseaseInfo.is_rice_leaf === "No" && (
+                <p className="text-lg text-red-700 mt-4 font-semibold">
+                  ⚠️ This is not a rice leaf image! Please upload a valid image.
+                </p>
+              )}
+            </div>
+          ) : (
+            <div className="p-6 max-w-full max-h-[100%] border rounded-lg shadow-md">
+              Image could not be recognized!{" "}
+              <p className="text-red-600">Server Error!</p>
+            </div>
           )}
         </div>
       </div>
