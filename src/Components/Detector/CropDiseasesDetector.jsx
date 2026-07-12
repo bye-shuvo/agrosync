@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
+import Navbar from "../Home/Navbar";
 import { GoogleGenAI } from "@google/genai";
-import leafImage from "../images/rice-leaf.jpeg";
+import leafImage from "../../images/rice-leaf.jpeg";
 
 const CropDiseaseDetector = () => {
   const [image, setImage] = useState(null);

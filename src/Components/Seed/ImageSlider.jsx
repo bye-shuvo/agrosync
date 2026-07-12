@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import features from "../images/features-bg.png";
-import Newsletter from "../images/newsletter-bg.jpg";
-import photo_2_agri from "../images/photo_2_agri.jpeg";
+import features from "../../images/features-bg.png";
+import Newsletter from "../../images/newsletter-bg.jpg";
+import photo_2_agri from "../../images/photo_2_agri.jpeg";
 
 
 const ImageSlider = ({ seedQuantity, selectedCrop, inputValue, selectedUnit , cropCategory}) => {

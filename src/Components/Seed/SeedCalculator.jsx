@@ -1,7 +1,7 @@
 import React, { useState, useRef , useEffect} from 'react';
 import CropDropDown from './CropDropDown';
 import UnitDropDown from './UnitDropDown';
-import Navbar from './Navbar';
+import Navbar from '../Home/Navbar';
 import ImageSlider from './ImageSlider';
 
 const SeedCalculator = () => {

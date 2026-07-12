@@ -1,10 +1,11 @@
 import React, { forwardRef } from "react";
 import { Link } from "react-router-dom";
+import grassline from "../../images/grass-line.png";
 
 const Footer = forwardRef((props , ref) => {
   return (
     <footer ref={ref} className="md:h-fit bg-[#23472f] relative text-gray-300 py-10">{/* have to work on this */}
-      <img className="absolute top-[-3.5%] md:top-[-6%] left-0 h-6 w-full object-cover hue-rotate-[40deg]" src="/src/images/grass-line.png" alt="green-grass" />
+      <img className="absolute top-[-3.5%] md:top-[-6%] left-0 h-6 w-full object-cover hue-rotate-[38deg] saturate-[60%]" src={grassline} alt="green-grass" />
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
         {/* About Section */}
         <div>

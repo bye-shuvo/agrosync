@@ -1,8 +1,8 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../Components/Home";
-import SeedCalculator from "../Components/SeedCalculator";
-import CropDiseaseDetector from "../Components/CropDiseasesDetector";
+import Home from "../Components/Home/Home";
+import SeedCalculator from "../Components/Seed/SeedCalculator";
+import CropDiseaseDetector from "../Components/Detector/CropDiseasesDetector";
 
 const Router = createBrowserRouter([
   {

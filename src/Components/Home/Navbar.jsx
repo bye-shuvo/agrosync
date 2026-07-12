@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import borderBelow from "../images/border-below.png";
+import borderBelow from "../../images/border-below.png";
 
 
 const Navbar = ({ hero , about, tools , footer , newsLetter}) => {
@@ -32,14 +32,14 @@ const Navbar = ({ hero , about, tools , footer , newsLetter}) => {
 
   return (
     <nav
-      className={`text-white fixed top-0 left-0 w-full flex flex-col md:flex-row z-50 transition-transform duration-300 
+      className={`text-white fixed top-0 left-0 w-full flex flex-col md:flex-row z-50 transition-transform duration-300
         ${isVisible ? "translate-y-0" : "-translate-y-full"}
-        ${isScrolled ? "bg-[#2e5b3ca9]" : "bg-transparent"}
+        ${isScrolled ? "bg-[#2e5b3ca9]" : isMobileMenuOpen ? "bg-[#2e5b3ca9]" : "md:bg-transparent"}
         `}
     >
-      <div className="w-full mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="w-full mx-auto px-6 py-3 md:py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="text-4xl font-bold flex items-center">
+        <div className="text-3xl md:text-4xl font-bold flex items-center">
           <i className="fas fa-seedling mr-2"></i> AgroSync
         </div>
 
@@ -117,14 +117,14 @@ const Navbar = ({ hero , about, tools , footer , newsLetter}) => {
           <i
             className={`fas ${
               isMobileMenuOpen ? "fa-times" : "fa-bars"
-            } text-3xl`}
+            } md:text-3xl text-2xl`}
           ></i>
         </div>
       </div>
 
       {/* Mobile Navigation Links */}
       {isMobileMenuOpen && (
-        <div className={`md:hidden`}>
+        <div className={`md:hidden border-b-2 border-b-[#FFD700]`}>
           <div className="text-xl font-bold flex flex-col items-center space-y-4 py-4 px-6">
           <span
             onClick={hero}
