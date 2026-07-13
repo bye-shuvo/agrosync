@@ -16,7 +16,7 @@ const Features = ({featuresRef}) => {
         <img
           src={grassline}
           alt="grass-line"
-          className="absolute top-[-1.4rem] md:top-[-1.5rem] left-0 w-full h-[1.5rem] object-cover"
+          className="absolute -top-[1.4rem] md:-top-[1.5rem] left-0 w-full h-[1.5rem] object-cover"
         />
         <h2
           id="features-title"
@@ -26,7 +26,7 @@ const Features = ({featuresRef}) => {
         </h2>
         <div
           id="crop-disease"
-          className="group relative md:mt-20 h-[50vh] overflow-hidden md:h-[85%] w-[90%] md:w-[100%] rounded-lg transition-all duration-500 ease-in-out"
+          className="group relative md:mt-20 h-[40vh] overflow-hidden md:h-[85%] w-[90%] md:w-[100%] rounded-lg transition-all duration-500 ease-in-out"
         >
           <img
             src={magnifyingGlass}
@@ -87,7 +87,7 @@ const Features = ({featuresRef}) => {
         </div>
         <div
           id="AI-chatbot"
-          className="group relative md:mt-20 h-[50vh] md:h-[85%] w-[90%] md:w-[100%] rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
+          className="group relative md:mt-20 h-[40vh] md:h-[85%] w-[90%] md:w-[100%] rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
         >
           <img
             src={chatbubble}
@@ -149,7 +149,7 @@ const Features = ({featuresRef}) => {
         </div>
         <div
           id="seed-calculator"
-          className="group relative md:mt-20 h-[50vh] md:h-[85%] w-[90%] md:w-[100%] rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
+          className="group relative md:mt-20 h-[40vh] md:h-[85%] w-[90%] md:w-[100%] rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
         >
           <img
             src={seeds}

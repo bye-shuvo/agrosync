@@ -17,7 +17,7 @@ const About = ({ aboutRef }) => {
       >
         <div
           id="text"
-          className="absolute top-[20%] md:top-[2%] left-[5%] h-[12%] md:h-[20%] w-[50%] md:w-[20%] bg-[#2e5b3c] text-white text-center p-4 rounded-lg z-10"
+          className="absolute top-[18%] md:top-[2%] left-[5%] h-[16%] md:h-[20%] w-[50%] md:w-[20%] bg-[#2e5b3c] text-white text-center p-4 rounded-lg z-10"
         >
           Follow our journey...{" "}
           <i className="fa-regular fa-circle-play absolute top-12 md:top-16 left-[42%] text-3xl md:text-4xl lg:text-6xl text-[#FFD700]"></i>
@@ -74,7 +74,7 @@ const About = ({ aboutRef }) => {
       </div>
       <div
         id="causes"
-        className="relative md:absolute md:top-[70%] md:left-[20%] p-2 md:p-9 text-sm md:text-[1rem] lg:text-[1.2em] text-white rounded-lg bg-[#2e5b3c] md:min-h-[25%] w-full md:w-[70%] flex justify-center items-center overflow-y-hidden overflow-x-scroll no-scrollbar"
+        className="relative md:absolute md:top-[70%] md:left-[20%] p-2 md:p-4 lg:p-6 text-sm md:text-[1rem] lg:text-[1.2em] text-white rounded-lg bg-[#2e5b3c] md:min-h-[25%] w-full md:w-[70%] flex justify-center items-center overflow-y-hidden overflow-x-scroll no-scrollbar"
       >
         <div className="items border-r-2 border-dotted border-[#FFD700] w-[30%] p-3">
           <h3 className="small-header group cursor-pointer text-[#FFD700] font-bold text-[1.2em] mb-2 md:mb-4 relative">

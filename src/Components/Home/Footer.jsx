@@ -5,12 +5,12 @@ import grassline from "../../images/grass-line.png";
 const Footer = forwardRef((props , ref) => {
   return (
     <footer ref={ref} className="md:h-fit bg-[#23472f] relative text-gray-300 py-10">{/* have to work on this */}
-      <img className="absolute top-[-3.5%] md:top-[-6%] left-0 h-6 w-full object-cover hue-rotate-[38deg] saturate-[60%]" src={grassline} alt="green-grass" />
+      <img className="absolute -top-[3.5%] md:-top-[5.5%] left-0 h-6 w-full object-cover hue-rotate-[80deg] saturate-[45%] brightness-[30%]" src={grassline} alt="green-grass" />
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
         {/* About Section */}
         <div>
-          <h2 className="text-white text-lg md:text-3xl font-semibold mb-4">About Us</h2>
-          <p className="text-sm md:text-xl mb-4">
+          <h2 className="text-white text-lg md:text-2xl lg:text-3xl font-semibold mb-4">About Us</h2>
+          <p className="text-sm md:text-lg lg:text-xl lg:mb-4">
             We are committed to revolutionizing agriculture with modern tools, technologies, and insights to empower farmers worldwide.
             <br />
             <br />
@@ -20,8 +20,8 @@ const Footer = forwardRef((props , ref) => {
 
         {/* Navigation Links */}
         <div>
-          <h2 className="text-white text-lg md:text-3xl font-semibold mb-4">Quick Links</h2>
-          <ul className="space-y-2 md:text-xl mb-4">
+          <h2 className="text-white text-lg md:text-2xl lg:text-3xl font-semibold mb-4">Quick Links</h2>
+          <ul className="space-y-2 text-sm md:text-lg lg:text-xl mb-4">
             <li>
               <Link href="/" className="hover:text-white ">Home</Link>
             </li>
@@ -42,8 +42,8 @@ const Footer = forwardRef((props , ref) => {
 
         {/* Contact & Social Media */}
         <div>
-          <h2 className="text-white text-lg md:text-3xl font-semibold mb-4">Contact</h2>
-          <ul className="space-y-2 md:text-xl mb-4">
+          <h2 className="text-white text-lg md:text-2xl lg:text-3xl font-semibold mb-4">Contact</h2>
+          <ul className="space-y-2 text-sm md:text-lg lg:text-xl mb-4">
             <li>Email: <a href="mailto:agrosyncbd@gmail.com" className="hover:text-white">agrosyncbd@gmail.com</a></li>
             <li>Phone: <a href="tel:+123456789" className="hover:text-white">+1 234 567 89</a></li>
             <li>Address: FEC</li>
@@ -66,7 +66,7 @@ const Footer = forwardRef((props , ref) => {
       </div>
 
       {/* Bottom Footer */}
-      <div className="mt-8 border-t border-[#FFD700] pt-6 text-center text-lg md:text-xl">
+      <div className="mt-8 border-t border-[#FFD700] pt-6 text-center text-sm md:text-lg lg:text-xl">
         <p>&copy; {new Date().getFullYear()} Agro-Sync. All Rights Reserved.</p>
       </div>
     </footer>
