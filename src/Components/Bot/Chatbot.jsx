@@ -93,7 +93,7 @@ PERSONALIZATION & PLATFORM TIE-IN:
     <div className="fixed bottom-14 right-4 flex items-center justify-center z-50">
       {isOpen && (
         <div
-          className={`flex items-center justify-center z-50 rounded-lg bg-white shadow-slate-500 shadow-lg ${isChatbotExpanded ? "md:w-[80vw]" : "md:w-[25rem]"} transition-all ease-in-out duration-300`}
+          className={`flex items-center justify-center z-50 rounded-lg bg-white shadow-slate-500 shadow-lg ${isChatbotExpanded ? "w-[90vw] md:w-[80vw]" : "w-[65vw] md:w-[25rem]"} transition-all ease-in-out duration-300`}
         >
           <div className="bg-white rounded-lg overflow-hidden w-full relative h-full md:h-auto flex flex-col">
             <header className="flex items-center justify-between border-b-[1.5px] border-slate-400 relative bg-[#2e5b3c] text-white p-2 px-8">
@@ -120,7 +120,7 @@ PERSONALIZATION & PLATFORM TIE-IN:
             </header>
             <div
               ref={scrollToEnd}
-              className={`${isChatbotExpanded ? "h-[65vh]" : "min-h-[60vh] md:min-h-[23rem] md:max-h-72"} w-full overflow-y-auto p-4 pt-0 pb-0 scroll-m-0 scroll-smooth transition-all ease-in-out duration-300`}
+              className={`${isChatbotExpanded ? "h-[70vh] md:h-[65vh]" : "min-h-[45vh] md:min-h-[23rem] md:max-h-72"} w-full overflow-y-auto p-4 pt-0 pb-0 scroll-m-0 scroll-smooth transition-all ease-in-out duration-300`}
             >
               {messages.map((message, index) => (
                 <div
