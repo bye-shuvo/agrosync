@@ -53,7 +53,7 @@ const Home = () => {
   };
 
   return (
-    <div id="landing-page" className="scroll-smooth max-w-[100vw]">
+    <div id="landing-page" className="scroll-smooth max-w-[100vw] h-[120dvh]">
       <Navbar hero = {scrollToLanding} about = {scrollToAbout} tools = {scrollToFeatures} footer = {scrollToFooter} newsLetter={scrollToNewsletter}/>
       <Hero landingRef={landingRef} scrollToAbout={scrollToAbout} scrollToFeatures={scrollToFeatures}/>
       <Features featuresRef={featuresRef} />

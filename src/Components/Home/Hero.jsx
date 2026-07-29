@@ -10,7 +10,7 @@ const Hero = ({landingRef , scrollToAbout , scrollToFeatures}) => {
         <div className="mt-[0%] md:mt-10 flex flex-col items-center justify-start md:items-start md:max-w-[80%]">
           <h1
             id="headline"
-            className="text-5xl leading-[3rem] md:leading-[5rem] text-[#ffffffea] md:text-7xl max-w-[80%] md:max-w-[80%] font-extrabold"
+            className="text-4xl leading-[3rem] md:leading-[5rem] text-[#ffffffea] md:text-7xl max-w-[80%] md:max-w-[80%] font-extrabold"
           >
             Empowering Farmers with Innovative Agri-Tech Solutions
           </h1>
