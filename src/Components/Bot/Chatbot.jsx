@@ -37,7 +37,7 @@ PERSONALIZATION & PLATFORM TIE-IN:
   const promptGeneration = async (query) => {
     try {
       const interaction = await genAI.interactions.create({
-        model: "gemini-3.5-flash",
+        model: "gemini-2.5-flash",
         input: query,
         system_instruction: agrosyncSystemInstruction,
       });
@@ -93,7 +93,7 @@ PERSONALIZATION & PLATFORM TIE-IN:
     <div className="fixed bottom-14 right-4 flex items-center justify-center z-50">
       {isOpen && (
         <div
-          className={`flex items-center justify-center z-50 rounded-lg bg-white shadow-slate-500 shadow-lg ${isChatbotExpanded ? "w-[90vw] md:w-[80vw]" : "w-[65vw] md:w-[25rem]"} transition-all ease-in-out duration-300`}
+          className={`flex items-center justify-center z-50 rounded-lg bg-white shadow-slate-500 shadow-lg ${isChatbotExpanded ? "w-[92vw] md:w-[80vw]" : "w-[80vw] md:w-[25rem]"} transition-all ease-in-out duration-300`}
         >
           <div className="bg-white rounded-lg overflow-hidden w-full relative h-full md:h-auto flex flex-col">
             <header className="flex items-center justify-between border-b-[1.5px] border-slate-400 relative bg-[#2e5b3c] text-white p-2 px-8">
@@ -120,7 +120,7 @@ PERSONALIZATION & PLATFORM TIE-IN:
             </header>
             <div
               ref={scrollToEnd}
-              className={`${isChatbotExpanded ? "h-[70vh] md:h-[65vh]" : "min-h-[45vh] md:min-h-[23rem] md:max-h-72"} w-full overflow-y-auto p-4 pt-0 pb-0 scroll-m-0 scroll-smooth transition-all ease-in-out duration-300`}
+              className={`${isChatbotExpanded ? "h-[60dvh] md:h-[70vh]" : "h-[40dvh] md:h-[45dvh]"} w-full overflow-y-auto p-4 pt-0 pb-0 scroll-m-0 scroll-smooth transition-all ease-in-out duration-300`}
             >
               {messages.map((message, index) => (
                 <div
@@ -132,12 +132,12 @@ PERSONALIZATION & PLATFORM TIE-IN:
                   } box-border p-2 w-full h-auto`}
                 >
                   {message.sender === "user" ? (
-                    <i className="fa-solid fa-user text-[2rem] text-[#2e5b3c]"></i>
+                    <i className="fa-solid fa-user text-[1.5rem] md:text-[2rem] text-[#2e5b3c]"></i>
                   ) : (
-                    <i className="fa-solid fa-robot text-[2rem] text-[#2e5b3c]"></i>
+                    <i className="fa-solid fa-robot text-[1.5rem] md:text-[2rem] text-[#2e5b3c]"></i>
                   )}
                   <p
-                    className={`max-w-[75%] min-h-6 rounded-md p-3 text-lg  ${
+                    className={`max-w-[75%] min-h-6 rounded-md p-2 md:p-3 md:text-lg  ${
                       message.sender === "user"
                         ? "mr-2 bg-gray-200 text-gray-800"
                         : "ml-2 bg-[#2e5b3c] text-white"
@@ -154,7 +154,7 @@ PERSONALIZATION & PLATFORM TIE-IN:
               ))}
             </div>
 
-            <div className="flex items-center space-x-2 border-t-[1.5px] border-slate-400 pt-2 p-4">
+            <div className="flex items-center md:space-x-2 border-t-[1px] md:border-t-[1.5px] border-slate-400 md:pt-2 p-2 md:p-4">
               <input
                 id="chat-input"
                 type="text"
@@ -168,13 +168,13 @@ PERSONALIZATION & PLATFORM TIE-IN:
                     input !== null && handleSendMessage();
                   }
                 }}
-                className="flex-1 bg-[#2e5b3c]/10 focus:border-b-[3px] focus:border-[#2e5b3c] rounded-lg text-lg px-4 py-3 outline-none"
+                className="flex-1 bg-[#2e5b3c]/10 focus:border-b-[3px] focus:border-[#2e5b3c] rounded-md md:rounded-lg text-sm md:text-lg px-3 md:px-4 py-2 md:py-3 outline-none"
               />
               <button
                 onClick={handleSendMessage}
                 className="flex items-center justify-center text-[#2e5b3c] hover:text-[#2e5b3c] p-4 transition-all ease-in-out"
               >
-                <i className="fa-solid fa-paper-plane text-3xl"></i>
+                <i className="fa-solid fa-paper-plane text-2xl md:text-3xl"></i>
               </button>
             </div>
           </div>

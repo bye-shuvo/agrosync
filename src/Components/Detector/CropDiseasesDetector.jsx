@@ -141,7 +141,7 @@ const CropDiseaseDetector = () => {
         className="z-10 h-screen w-[45%] flex flex-col items-center md:justify-center"
       >
         {/*Image file uploader input field*/}
-        <label className="flex justify-center items-center min-w-56 md:min-w-56 h-14 md:h-20 md:p-4 mt-2 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg border-2 border-dashed border-gray-300 cursor-pointer">
+        <label className="flex justify-center items-center min-w-56 md:min-w-56 md:h-20 md:p-4 mt-2 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg border-2 border-dashed border-gray-300 cursor-pointer">
           <input
             type="file"
             accept="image/*"
@@ -149,7 +149,7 @@ const CropDiseaseDetector = () => {
             className="hidden"
             onChange={handleImageUpload}
           />
-          <div className="text-center md:p-4">
+          <div className="text-center md:p-4 p-2">
             <i className="fas fa-cloud-upload-alt text-2xl md:text-4xl"></i>
             <p className="md:mt-1 md:text-xl">
               📤 {fileName || "Click to Upload"}
